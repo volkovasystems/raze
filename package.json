@@ -1,0 +1,28 @@
+{
+  "name": "raze",
+  "version": "0.0.0",
+  "description": "Basic Array.from polyfill.",
+  "main": "raze.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/volkovasystems/raze.git"
+  },
+  "keywords": [
+    "Array.from",
+    "Array.prototype.slice",
+    "arguments-to-array",
+    "array"
+  ],
+  "author": "Richeve S. Bebedor <richeve.bebedor@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/volkovasystems/raze/issues"
+  },
+  "homepage": "https://github.com/volkovasystems/raze#readme",
+  "dependencies": {
+    "harden": "^0.2.0"
+  }
+}

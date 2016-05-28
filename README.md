@@ -1,2 +1,2 @@
 # raze
-Basic Array.from polyfill.
+Basic and enhanced Array.from polyfill.

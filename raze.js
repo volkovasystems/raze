@@ -98,9 +98,10 @@ var raze = function raze( array, map, entity ){
 		@end-meta-configuration
 	*/
 
-	array = ( /Arguments/ ).test( arguments[ 0 ].toString( ) )? arguments[ 0 ] :
-		Array.isArray( this )? this :
-		throw new Error( "array is not specified" );
+	array = typeof arguments[ 0 ] != "undefined" &&
+		( /Arguments/ ).test( arguments[ 0 ].toString( ) )? arguments[ 0 ] :
+		Array.isArray( arguments[ 0 ] )? arguments[ 0 ] :
+		Array.isArray( this )? this : [ ];
 
 	var _array = Array.from( array, map, entity );
 
@@ -110,7 +111,7 @@ var raze = function raze( array, map, entity ){
 		_array = _array.concat( this );
 	}
 
-	harden( "raze", _array, raze.bind( _array ) );
+	harden( "raze", raze.bind( _array ), _array );
 
 	return _array;
 };

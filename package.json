@@ -1,6 +1,6 @@
 {
   "name": "raze",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Basic and enhanced Array.from polyfill.",
   "main": "raze.js",
   "scripts": {},

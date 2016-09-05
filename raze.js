@@ -1,6 +1,6 @@
 "use strict";
 
-/*:
+/*;
 	@module-license:
 		The MIT License (MIT)
 		@mit-license
@@ -88,7 +88,7 @@ if( typeof window != "undefined" &&
 }
 
 var raze = function raze( array, map, entity ){
-	/*:
+	/*;
 		@meta-configuration:
 			{
 				"array:required": "[*]",
@@ -103,17 +103,17 @@ var raze = function raze( array, map, entity ){
 		Array.isArray( arguments[ 0 ] )? arguments[ 0 ] :
 		Array.isArray( this )? this : [ ];
 
-	var _array = Array.from( array, map, entity );
+	var list = Array.from( array, map, entity );
 
 	if( array !== this &&
 		Array.isArray( this ) )
 	{
-		_array = _array.concat( this );
+		list = list.concat( this );
 	}
 
-	harden( "raze", raze.bind( _array ), _array );
+	harden( "raze", raze.bind( list ), list );
 
-	return _array;
+	return list;
 };
 
 if( typeof module != "undefined" ){

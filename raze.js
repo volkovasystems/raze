@@ -117,5 +117,5 @@ this.raze = function raze( array, map, entity ){
 if( typeof module != "undefined" &&
 	typeof module.exports != "undefined" )
 {
-	module.exports = raze;
+	module.exports = this.raze;
 }

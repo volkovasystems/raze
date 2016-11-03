@@ -77,7 +77,7 @@
 //: @end-support-module
 
 
-if( typeof window == "undefined" ){
+if( typeof require == "function" ){
 	var harden = require( "harden" );
 }
 
@@ -87,7 +87,7 @@ if( typeof window != "undefined" &&
 	throw new Error( "harden is not defined" );
 }
 
-var raze = function raze( array, map, entity ){
+this.raze = function raze( array, map, entity ){
 	/*;
 		@meta-configuration:
 			{
@@ -103,11 +103,9 @@ var raze = function raze( array, map, entity ){
 		Array.isArray( arguments[ 0 ] )? arguments[ 0 ] :
 		Array.isArray( this )? this : [ ];
 
-	var list = Array.from( array, map, entity );
+	let list = Array.from( array, map, entity );
 
-	if( array !== this &&
-		Array.isArray( this ) )
-	{
+	if( array !== this && Array.isArray( this ) ){
 		list = list.concat( this );
 	}
 
@@ -116,6 +114,8 @@ var raze = function raze( array, map, entity ){
 	return list;
 };
 
-if( typeof module != "undefined" ){
+if( typeof module != "undefined" &&
+	typeof module.exports != "undefined" )
+{
 	module.exports = raze;
 }

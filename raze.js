@@ -55,14 +55,31 @@
 
 	@include:
 		{
+			"doubt": "doubt",
 			"harden": "harden"
 		}
 	@end-include
 */
 
+if( typeof require == "function" ){
+	var doubt = require( "doubt" );
+	var harden = require( "harden" );
+}
+
+if( typeof window != "undefined" &&
+	!( "doubt" in window ) )
+{
+	throw new Error( "doubt is not defined" );
+}
+
+if( typeof window != "undefined" &&
+	!( "harden" in window ) )
+{
+	throw new Error( "harden is not defined" );
+}
+
 //: @support-module:
-	// Production steps of ECMA-262, Edition 6, 22.1.2.1
-	// Reference: https://people.mozilla.org/~jorendorff/es6-draft.html#sec-array.from
+	//: @reference: https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/Array/from
 	Array.from||(Array.from=function(){var r=Object.prototype.toString,n=function(n){
 	return"function"==typeof n||"[object Function]"===r.call(n)},t=function(r){var n=Number(r);
 	return isNaN(n)?0:0!==n&&isFinite(n)?(n>0?1:-1)*Math.floor(Math.abs(n)):n},
@@ -76,17 +93,6 @@
 	u?c[h]="undefined"==typeof a?u(i,h):u.call(a,i,h):c[h]=i,h+=1;return c.length=f,c}}());
 //: @end-support-module
 
-
-if( typeof require == "function" ){
-	var harden = require( "harden" );
-}
-
-if( typeof window != "undefined" &&
-	!( "harden" in window ) )
-{
-	throw new Error( "harden is not defined" );
-}
-
 this.raze = function raze( array, map, entity ){
 	/*;
 		@meta-configuration:
@@ -98,14 +104,12 @@ this.raze = function raze( array, map, entity ){
 		@end-meta-configuration
 	*/
 
-	array = typeof arguments[ 0 ] != "undefined" &&
-		( /Arguments/ ).test( arguments[ 0 ].toString( ) )? arguments[ 0 ] :
-		Array.isArray( arguments[ 0 ] )? arguments[ 0 ] :
-		Array.isArray( this )? this : [ ];
+	array = doubt( array ).AS_ARRAY? array :
+		doubt( this ).AS_ARRAY? this : [ ];
 
 	let list = Array.from( array, map, entity );
 
-	if( array !== this && Array.isArray( this ) ){
+	if( array !== this && doubt( this ).ARRAY ){
 		list = list.concat( this );
 	}
 

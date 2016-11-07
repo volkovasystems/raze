@@ -27,6 +27,7 @@
     "tests"
   ],
   "dependencies": {
-    "harden": "^0.4.0"
+    "harden": "^0.4.0",
+    "doubt": "^0.1.0"
   }
 }

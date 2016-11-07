@@ -2,6 +2,30 @@
   "name": "raze",
   "version": "0.1.0",
   "dependencies": {
+    "doubt": {
+      "version": "0.1.0",
+      "from": "doubt@latest",
+      "resolved": "https://registry.npmjs.org/doubt/-/doubt-0.1.0.tgz",
+      "dependencies": {
+        "harden": {
+          "version": "0.4.0",
+          "from": "harden@latest",
+          "resolved": "https://registry.npmjs.org/harden/-/harden-0.4.0.tgz"
+        },
+        "protype": {
+          "version": "0.0.0",
+          "from": "protype@latest",
+          "resolved": "https://registry.npmjs.org/protype/-/protype-0.0.0.tgz",
+          "dependencies": {
+            "harden": {
+              "version": "0.4.0",
+              "from": "harden@latest",
+              "resolved": "https://registry.npmjs.org/harden/-/harden-0.4.0.tgz"
+            }
+          }
+        }
+      }
+    },
     "harden": {
       "version": "0.4.0",
       "from": "harden@latest",

@@ -66,15 +66,11 @@ if( typeof require == "function" ){
 	var harden = require( "harden" );
 }
 
-if( typeof window != "undefined" &&
-	!( "doubt" in window ) )
-{
+if( typeof window != "undefined" && !( "doubt" in window ) ){
 	throw new Error( "doubt is not defined" );
 }
 
-if( typeof window != "undefined" &&
-	!( "harden" in window ) )
-{
+if( typeof window != "undefined" && !( "harden" in window ) ){
 	throw new Error( "harden is not defined" );
 }
 
@@ -93,7 +89,7 @@ if( typeof window != "undefined" &&
 	u?c[h]="undefined"==typeof a?u(i,h):u.call(a,i,h):c[h]=i,h+=1;return c.length=f,c}}());
 //: @end-support-module
 
-this.raze = function raze( array, map, entity ){
+var raze = function raze( array, map, entity ){
 	/*;
 		@meta-configuration:
 			{
@@ -118,8 +114,6 @@ this.raze = function raze( array, map, entity ){
 	return list;
 };
 
-if( typeof module != "undefined" &&
-	typeof module.exports != "undefined" )
-{
-	module.exports = this.raze;
+if( typeof module != "undefined" && typeof module.exports != "undefined" ){
+	module.exports = raze;
 }

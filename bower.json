@@ -1,6 +1,6 @@
 {
   "name": "raze",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "Basic and enhanced Array.from polyfill.",
   "main": "raze.js",
   "authors": [
@@ -27,7 +27,7 @@
     "tests"
   ],
   "dependencies": {
-    "harden": "^0.4.0",
-    "doubt": "^0.1.0"
+    "doubt": "^0.2.0",
+    "harden": "^0.6.0"
   }
 }

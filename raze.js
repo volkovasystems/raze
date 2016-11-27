@@ -61,18 +61,8 @@
 	@end-include
 */
 
-if( typeof require == "function" ){
-	var doubt = require( "doubt" );
-	var harden = require( "harden" );
-}
-
-if( typeof window != "undefined" && !( "doubt" in window ) ){
-	throw new Error( "doubt is not defined" );
-}
-
-if( typeof window != "undefined" && !( "harden" in window ) ){
-	throw new Error( "harden is not defined" );
-}
+const doubt = require( "doubt" );
+const harden = require( "harden" );
 
 //: @support-module:
 	//: @reference: https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/Array/from
@@ -89,7 +79,7 @@ if( typeof window != "undefined" && !( "harden" in window ) ){
 	u?c[h]="undefined"==typeof a?u(i,h):u.call(a,i,h):c[h]=i,h+=1;return c.length=f,c}}());
 //: @end-support-module
 
-var raze = function raze( array, map, entity ){
+const raze = function raze( array, map, entity ){
 	/*;
 		@meta-configuration:
 			{
@@ -114,6 +104,4 @@ var raze = function raze( array, map, entity ){
 	return list;
 };
 
-if( typeof module != "undefined" && typeof module.exports != "undefined" ){
-	module.exports = raze;
-}
+module.exports = raze;

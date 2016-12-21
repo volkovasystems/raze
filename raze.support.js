@@ -64,45 +64,65 @@
 	@end-include
 */
 
-const doubt = require( "doubt" );
-const harden = require( "harden" );
+var _from = require("babel-runtime/core-js/array/from");
+
+var _from2 = _interopRequireDefault(_from);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var doubt = require("doubt");
+var harden = require("harden");
 
 //: @support-module:
-	//: @reference: https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/Array/from
-	Array.from||(Array.from=function(){var r=Object.prototype.toString,n=function(n){
-	return"function"==typeof n||"[object Function]"===r.call(n)},t=function(r){var n=Number(r);
-	return isNaN(n)?0:0!==n&&isFinite(n)?(n>0?1:-1)*Math.floor(Math.abs(n)):n},
-	e=Math.pow(2,53)-1,o=function(r){var n=t(r);return Math.min(Math.max(n,0),e)};
-	return function(r){var t=this,e=Object(r);
-	if(null==r)throw new TypeError("Array.from requires an array-like object - not null or undefined");
-	var a,u=arguments.length>1?arguments[1]:void 0;if("undefined"!=typeof u){
-	if(!n(u))throw new TypeError("Array.from: when provided, the second argument must be a function");
-	arguments.length>2&&(a=arguments[2])}for(var i,f=o(e.length),c=n(t)?
-	Object(new t(f)):new Array(f),h=0;f>h;)i=e[h],
-	u?c[h]="undefined"==typeof a?u(i,h):u.call(a,i,h):c[h]=i,h+=1;return c.length=f,c}}());
+//: @reference: https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/Array/from
+_from2.default || (Array.from = function () {
+	var r = Object.prototype.toString,
+	    n = function n(_n) {
+		return "function" == typeof _n || "[object Function]" === r.call(_n);
+	},
+	    t = function t(r) {
+		var n = Number(r);
+		return isNaN(n) ? 0 : 0 !== n && isFinite(n) ? (n > 0 ? 1 : -1) * Math.floor(Math.abs(n)) : n;
+	},
+	    e = Math.pow(2, 53) - 1,
+	    o = function o(r) {
+		var n = t(r);return Math.min(Math.max(n, 0), e);
+	};
+	return function (r) {
+		var t = this,
+		    e = Object(r);
+		if (null == r) throw new TypeError("Array.from requires an array-like object - not null or undefined");
+		var a,
+		    u = arguments.length > 1 ? arguments[1] : void 0;if ("undefined" != typeof u) {
+			if (!n(u)) throw new TypeError("Array.from: when provided, the second argument must be a function");
+			arguments.length > 2 && (a = arguments[2]);
+		}for (var i, f = o(e.length), c = n(t) ? Object(new t(f)) : new Array(f), h = 0; f > h;) {
+			i = e[h], u ? c[h] = "undefined" == typeof a ? u(i, h) : u.call(a, i, h) : c[h] = i, h += 1;
+		}return c.length = f, c;
+	};
+}());
 //: @end-support-module
 
-const raze = function raze( array, map, entity ){
+var raze = function raze(array, map, entity) {
 	/*;
-		@meta-configuration:
-			{
-				"array:required": "[*]",
-				"map:optional": "function",
-				"entity:optional": "object"
-			}
-		@end-meta-configuration
-	*/
+ 	@meta-configuration:
+ 		{
+ 			"array:required": "[*]",
+ 			"map:optional": "function",
+ 			"entity:optional": "object"
+ 		}
+ 	@end-meta-configuration
+ */
 
-	array = doubt( array ).AS_ARRAY? array :
-		doubt( this ).AS_ARRAY? this : [ ];
+	array = doubt(array).AS_ARRAY ? array : doubt(this).AS_ARRAY ? this : [];
 
-	let list = Array.from( array, map, entity );
+	var list = (0, _from2.default)(array, map, entity);
 
-	if( array !== this && doubt( this ).ARRAY ){
-		list = list.concat( this );
+	if (array !== this && doubt(this).ARRAY) {
+		list = list.concat(this);
 	}
 
-	harden( "raze", raze.bind( list ), list );
+	harden("raze", raze.bind(list), list);
 
 	return list;
 };

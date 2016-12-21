@@ -1,9 +1,14 @@
 {
   "name": "raze",
-  "version": "0.5.0",
+  "version": "0.6.0",
   "description": "Basic and enhanced Array.from polyfill.",
   "main": "raze.js",
-  "scripts": {},
+  "support": "raze.support.js",
+  "deploy": "raze.deploy.js",
+  "scripts": {
+    "build": "babel raze.js -o raze.support.js && webpack",
+    "test": "mocha raze-test.js"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/volkovasystems/raze.git"
@@ -15,13 +20,24 @@
     "array"
   ],
   "author": "Richeve S. Bebedor <richeve.bebedor@gmail.com>",
+  "contributors": [
+    "John Lenon Maghanoy <johnlenonmaghanoy@gmail.com>"
+  ],
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/volkovasystems/raze/issues"
   },
   "homepage": "https://github.com/volkovasystems/raze#readme",
   "dependencies": {
-    "doubt": "^0.4.0",
-    "harden": "^0.7.0"
+    "babel-runtime": "^6.20.0",
+    "doubt": "^0.6.0",
+    "harden": "^0.12.0"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.18.0",
+    "babel-core": "^6.21.0",
+    "babel-plugin-transform-runtime": "^6.15.0",
+    "babel-preset-latest": "^6.16.0",
+    "webpack": "^1.14.0"
   }
 }

@@ -98,7 +98,7 @@ const raze = function raze( array, map, entity ){
 
 	let list = Array.from( array, map, entity );
 
-	if( array !== this && doubt( this ).ARRAY ){
+	if( array !== this && doubt( this, ARRAY ) ){
 		list = list.concat( this );
 	}
 

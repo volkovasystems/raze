@@ -1,6 +1,6 @@
 {
   "name": "raze",
-  "version": "0.7.0",
+  "version": "0.8.0",
   "description": "Basic and enhanced Array.from polyfill.",
   "main": "raze.js",
   "support": "raze.support.js",
@@ -30,7 +30,7 @@
   "homepage": "https://github.com/volkovasystems/raze#readme",
   "dependencies": {
     "babel-runtime": "^6.22.0",
-    "doubt": "^0.8.0",
+    "doubt": "^0.9.0",
     "harden": "^0.13.0"
   },
   "devDependencies": {

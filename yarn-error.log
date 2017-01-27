@@ -1,0 +1,61 @@
+Arguments: 
+  /usr/local/bin/node /usr/share/yarn/bin/yarn.js add babel-runtime doubt harden --save
+
+PATH: 
+  /home/biyaheroes/bin:/home/biyaheroes/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+
+Yarn version: 
+  0.18.1
+
+Node version: 
+  6.9.4
+
+Platform: 
+  linux x64
+
+npm manifest: 
+  {
+    "name": "raze",
+    "version": "0.10.0",
+    "description": "Basic and enhanced Array.from polyfill.",
+    "main": "raze.js",
+    "support": "raze.support.js",
+    "deploy": "raze.deploy.js",
+    "scripts": {
+      "build": "babel raze.js -o raze.support.js && webpack",
+      "test": "mocha raze-test.js"
+    },
+    "repository": {
+      "type": "git",
+      "url": "git+https://github.com/volkovasystems/raze.git"
+    },
+    "keywords": [
+      "Array.from",
+      "Array.prototype.slice",
+      "arguments-to-array",
+      "array"
+    ],
+    "author": "Richeve S. Bebedor <richeve.bebedor@gmail.com>",
+    "contributors": [
+      "John Lenon Maghanoy <johnlenonmaghanoy@gmail.com>"
+    ],
+    "license": "MIT",
+    "bugs": {
+      "url": "https://github.com/volkovasystems/raze/issues"
+    },
+    "homepage": "https://github.com/volkovasystems/raze#readme",
+    "dependencies": {},
+    "devDependencies": {}
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
+
+Trace: 
+  Error: getaddrinfo EAI_AGAIN registry.yarnpkg.com:443
+      at Object.exports._errnoException (util.js:1022:11)
+      at errnoException (dns.js:33:15)
+      at GetAddrInfoReqWrap.onlookup [as oncomplete] (dns.js:76:26)

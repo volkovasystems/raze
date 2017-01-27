@@ -93,8 +93,8 @@ const raze = function raze( array, map, entity ){
 		@end-meta-configuration
 	*/
 
-	array = doubt( array ).AS_ARRAY? array :
-		doubt( this ).AS_ARRAY? this : [ ];
+	array = doubt( array, AS_ARRAY )? array :
+		doubt( this, AS_ARRAY )? this : [ ];
 
 	let list = Array.from( array, map, entity );
 

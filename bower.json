@@ -1,10 +1,8 @@
 {
   "name": "raze",
-  "version": "0.12.0",
+  "version": "0.13.0",
   "description": "Basic and enhanced Array.from polyfill.",
-  "main": "raze.js",
-  "support": "raze.support.js",
-  "deploy": "raze.deploy.js",
+  "main": "raze.deploy.js",
   "authors": [
     "Richeve S. Bebedor <richeve.bebedor@gmail.com>",
     "John Lenon Maghanoy <johnlenonmaghanoy@gmail.com>"
@@ -30,7 +28,7 @@
     "tests"
   ],
   "dependencies": {
-    "doubt": "^0.10.0",
+    "doubt": "^0.11.0",
     "harden": "^0.14.0"
   }
 }

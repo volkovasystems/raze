@@ -1012,9 +1012,9 @@ domain-browser@^1.1.1:
   version "1.1.7"
   resolved "https://registry.yarnpkg.com/domain-browser/-/domain-browser-1.1.7.tgz#867aa4b093faa05f1de08c06f4d7b21fdf8698bc"
 
-doubt@^0.12.0:
-  version "0.12.0"
-  resolved "https://registry.yarnpkg.com/doubt/-/doubt-0.12.0.tgz#b8109a72068c6900e8edd5bae4367a6ddd8491eb"
+doubt@^0.13.0:
+  version "0.13.0"
+  resolved "https://registry.yarnpkg.com/doubt/-/doubt-0.13.0.tgz#c55344ebc081005c10308a214b3d60d53e9484f6"
   dependencies:
     babel-runtime "^6.22.0"
     cemento "^0.8.0"

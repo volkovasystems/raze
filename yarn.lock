@@ -1012,15 +1012,16 @@ domain-browser@^1.1.1:
   version "1.1.7"
   resolved "https://registry.yarnpkg.com/domain-browser/-/domain-browser-1.1.7.tgz#867aa4b093faa05f1de08c06f4d7b21fdf8698bc"
 
-doubt@^0.13.0:
-  version "0.13.0"
-  resolved "https://registry.yarnpkg.com/doubt/-/doubt-0.13.0.tgz#c55344ebc081005c10308a214b3d60d53e9484f6"
+doubt@^0.14.0:
+  version "0.14.0"
+  resolved "https://registry.yarnpkg.com/doubt/-/doubt-0.14.0.tgz#0196e55ab36ebd6c855812551b9188a5debeaecc"
   dependencies:
     babel-runtime "^6.22.0"
     cemento "^0.8.0"
     circular-json "^0.3.1"
     falzy "^0.11.0"
     harden "^0.14.0"
+    kount "^0.7.0"
     protype "^0.15.0"
 
 ecc-jsbn@~0.1.1:
@@ -1540,6 +1541,12 @@ kind-of@^3.0.2:
   resolved "https://registry.yarnpkg.com/kind-of/-/kind-of-3.1.0.tgz#475d698a5e49ff5e53d14e3e732429dc8bf4cf47"
   dependencies:
     is-buffer "^1.0.2"
+
+kount@^0.7.0:
+  version "0.7.0"
+  resolved "https://registry.yarnpkg.com/kount/-/kount-0.7.0.tgz#ffcf367ef7cd68f6e37034b61d5569d4af5bcdd9"
+  dependencies:
+    babel-runtime "^6.22.0"
 
 lazy-cache@^1.0.3:
   version "1.0.4"

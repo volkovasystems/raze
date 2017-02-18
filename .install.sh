@@ -14,4 +14,5 @@ webpack \
 bower install \
 doubt \
 harden \
---save
+--save \
+--force-latest

@@ -1008,14 +1008,14 @@ domain-browser@^1.1.1:
   version "1.1.7"
   resolved "https://registry.yarnpkg.com/domain-browser/-/domain-browser-1.1.7.tgz#867aa4b093faa05f1de08c06f4d7b21fdf8698bc"
 
-doubt@^0.24.0:
-  version "0.24.0"
-  resolved "https://registry.yarnpkg.com/doubt/-/doubt-0.24.0.tgz#6bdcf6d1b6a9b16ae74d77ebba86edd023c2deeb"
+doubt@^0.25.0:
+  version "0.25.0"
+  resolved "https://registry.yarnpkg.com/doubt/-/doubt-0.25.0.tgz#81d38fcd79cb642c1d292421ac1f47f902f49616"
   dependencies:
     babel-runtime "^6.23.0"
     cemento "^0.15.0"
     circular-json "^0.3.1"
-    falzy "^0.17.0"
+    falzy "^0.19.0"
     harden "^0.21.0"
     khount "^0.0.0"
     protype "^0.21.0"
@@ -1107,13 +1107,6 @@ extglob@^0.3.1:
 extsprintf@1.0.2:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/extsprintf/-/extsprintf-1.0.2.tgz#e1080e0658e300b06294990cc70e1502235fd550"
-
-falzy@^0.17.0:
-  version "0.17.0"
-  resolved "https://registry.yarnpkg.com/falzy/-/falzy-0.17.0.tgz#228535d605ae8d1a0ccd44f185d7534636a166fe"
-  dependencies:
-    babel-runtime "^6.23.0"
-    protype "^0.21.0"
 
 falzy@^0.19.0:
   version "0.19.0"

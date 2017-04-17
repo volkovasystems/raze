@@ -1,6 +1,6 @@
 {
   "name": "raze",
-  "version": "0.25.0",
+  "version": "0.26.0",
   "description": "Basic and enhanced Array.from polyfill.",
   "main": "raze.js",
   "support": "raze.support.js",
@@ -32,14 +32,14 @@
   "dependencies": {
     "babel-runtime": "^6.23.0",
     "doubt": "^0.24.0",
-    "harden": "^0.21.0"
+    "falzy": "^0.19.0"
   },
   "devDependencies": {
-    "babel-cli": "^6.24.0",
-    "babel-core": "^6.24.0",
+    "babel-cli": "^6.24.1",
+    "babel-core": "^6.24.1",
     "babel-plugin-transform-runtime": "^6.23.0",
-    "babel-preset-latest": "^6.24.0",
-    "source-map-loader": "^0.2.0",
-    "webpack": "^2.3.2"
+    "babel-preset-latest": "^6.24.1",
+    "source-map-loader": "^0.2.1",
+    "webpack": "^2.4.1"
   }
 }

@@ -1,7 +1,7 @@
 yarn add \
 babel-runtime \
 doubt \
-harden \
+falzy \
 --save && \
 yarn add \
 babel-cli \
@@ -13,6 +13,6 @@ webpack \
 --dev && \
 bower install \
 doubt \
-harden \
+falzy \
 --save \
 --force-latest

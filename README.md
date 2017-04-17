@@ -1,2 +1,2 @@
 # raze
-Basic and enhanced Array.from polyfill.
+Convert array-like data structures to Array instance.

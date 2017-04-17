@@ -45,27 +45,21 @@
 	@end-module-configuration
 
 	@module-documentation:
-		Delegate implementation of @code:Array.from;
+		Convert array-like data structures to Array instance.
 
-		This module loads @code:Array.from; support module.
-
-		When an array or array-like entity is raze, it will attach a raze bound to it self.
-
-		If the a razed array raze another array it will append elements.
-
-		Other parameters follow the documentation for @code:Array.from;
+		This will always return a new array.
 	@end-module-documentation
 
 	@include:
 		{
-			"doubt": "doubt",
-			"harden": "harden"
+			"falzy": "falzy",
+			"doubt": "doubt"
 		}
 	@end-include
 */
 
+const falzy = require( "falzy" );
 const doubt = require( "doubt" );
-const harden = require( "harden" );
 
 const raze = function raze( array, map, entity ){
 	/*;
@@ -78,18 +72,16 @@ const raze = function raze( array, map, entity ){
 		@end-meta-configuration
 	*/
 
-	array = doubt( array, AS_ARRAY )? array :
-		doubt( this, AS_ARRAY )? this : [ ];
-
-	let list = Array.from( array, map, entity );
-
-	if( array !== this && doubt( this, ARRAY ) ){
-		list = list.concat( this );
+	if( falzy( array ) || !doubt( array, AS_ARRAY ) ){
+		array = [ ];
 	}
 
-	harden( "raze", raze.bind( list ), list );
+	try{
+		return Array.from( array, map, entity );
 
-	return list;
+	}catch( error ){
+		return [ ];
+	}
 };
 
 module.exports = raze;

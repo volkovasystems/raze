@@ -52,13 +52,11 @@
 
 	@include:
 		{
-			"falzy": "falzy",
 			"doubt": "doubt"
 		}
 	@end-include
 */
 
-const falzy = require( "falzy" );
 const doubt = require( "doubt" );
 
 const raze = function raze( array ){
@@ -70,7 +68,7 @@ const raze = function raze( array ){
 		@end-meta-configuration
 	*/
 
-	if( falzy( array ) || !doubt( array, AS_ARRAY ) ){
+	if( !doubt( array, AS_ARRAY ) ){
 		return [ ];
 	}
 

@@ -52,13 +52,11 @@
               
               	@include:
               		{
-              			"falzy": "falzy",
               			"doubt": "doubt"
               		}
               	@end-include
               */var _from = require("babel-runtime/core-js/array/from");var _from2 = _interopRequireDefault(_from);function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
 
-var falzy = require("falzy");
 var doubt = require("doubt");
 
 var raze = function raze(array) {
@@ -70,7 +68,7 @@ var raze = function raze(array) {
                                  	@end-meta-configuration
                                  */
 
-	if (falzy(array) || !doubt(array, AS_ARRAY)) {
+	if (!doubt(array, AS_ARRAY)) {
 		return [];
 	}
 

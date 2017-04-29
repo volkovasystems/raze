@@ -1008,9 +1008,9 @@ domain-browser@^1.1.1:
   version "1.1.7"
   resolved "https://registry.yarnpkg.com/domain-browser/-/domain-browser-1.1.7.tgz#867aa4b093faa05f1de08c06f4d7b21fdf8698bc"
 
-doubt@^0.25.0:
-  version "0.25.0"
-  resolved "https://registry.yarnpkg.com/doubt/-/doubt-0.25.0.tgz#81d38fcd79cb642c1d292421ac1f47f902f49616"
+doubt@^0.26.0:
+  version "0.26.0"
+  resolved "https://registry.yarnpkg.com/doubt/-/doubt-0.26.0.tgz#467a4c4470f39a66258675d62c796769a5f2be48"
   dependencies:
     babel-runtime "^6.23.0"
     cemento "^0.15.0"
@@ -1019,7 +1019,8 @@ doubt@^0.25.0:
     harden "^0.21.0"
     khount "^0.0.0"
     protype "^0.21.0"
-    stringe "^0.2.0"
+    stringe "^0.3.0"
+    truly "^0.18.0"
 
 ecc-jsbn@~0.1.1:
   version "0.1.1"
@@ -2224,9 +2225,9 @@ string_decoder@~1.0.0:
   dependencies:
     buffer-shims "~1.0.0"
 
-stringe@^0.2.0:
-  version "0.2.0"
-  resolved "https://registry.yarnpkg.com/stringe/-/stringe-0.2.0.tgz#0e7dabe11258cdcf5d7e0ce5e4a1a9d043936a0e"
+stringe@^0.3.0:
+  version "0.3.0"
+  resolved "https://registry.yarnpkg.com/stringe/-/stringe-0.3.0.tgz#9246b545ac96d459643af40dacfdbb49ec172378"
   dependencies:
     babel-runtime "^6.23.0"
 
@@ -2308,6 +2309,12 @@ tough-cookie@~2.3.0:
 trim-right@^1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/trim-right/-/trim-right-1.0.1.tgz#cb2e1203067e0c8de1f614094b9fe45704ea6003"
+
+truly@^0.18.0:
+  version "0.18.0"
+  resolved "https://registry.yarnpkg.com/truly/-/truly-0.18.0.tgz#333c3f312083e31bbc601ccb95919ddafb14f4e3"
+  dependencies:
+    babel-runtime "^6.23.0"
 
 tty-browserify@0.0.0:
   version "0.0.0"

@@ -1,7 +1,7 @@
 {
   "name": "raze",
-  "version": "0.27.0",
-  "description": "Basic and enhanced Array.from polyfill.",
+  "version": "0.28.0",
+  "description": "Convert array-like data structures to Array instance.",
   "main": "raze.js",
   "support": "raze.support.js",
   "deploy": "raze.deploy.js",
@@ -15,10 +15,13 @@
     "url": "git+https://github.com/volkovasystems/raze.git"
   },
   "keywords": [
-    "Array.from",
-    "Array.prototype.slice",
-    "arguments-to-array",
-    "array"
+    "convert",
+    "array-like",
+    "data",
+    "structure",
+    "Array",
+    "instance",
+    "raze"
   ],
   "author": "Richeve S. Bebedor <richeve.bebedor@gmail.com>",
   "contributors": [

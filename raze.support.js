@@ -61,23 +61,21 @@
 var falzy = require("falzy");
 var doubt = require("doubt");
 
-var raze = function raze(array, map, entity) {
+var raze = function raze(array) {
 	/*;
-                                              	@meta-configuration:
-                                              		{
-                                              			"array:required": "[*]",
-                                              			"map:optional": "function",
-                                              			"entity:optional": "object"
-                                              		}
-                                              	@end-meta-configuration
-                                              */
+                                 	@meta-configuration:
+                                 		{
+                                 			"array:required": doubt:AS_ARRAY
+                                 		}
+                                 	@end-meta-configuration
+                                 */
 
 	if (falzy(array) || !doubt(array, AS_ARRAY)) {
-		array = [];
+		return [];
 	}
 
 	try {
-		return (0, _from2.default)(array, map, entity);
+		return (0, _from2.default)(array);
 
 	} catch (error) {
 		return [];

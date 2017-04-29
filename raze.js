@@ -61,23 +61,21 @@
 const falzy = require( "falzy" );
 const doubt = require( "doubt" );
 
-const raze = function raze( array, map, entity ){
+const raze = function raze( array ){
 	/*;
 		@meta-configuration:
 			{
-				"array:required": "[*]",
-				"map:optional": "function",
-				"entity:optional": "object"
+				"array:required": doubt:AS_ARRAY
 			}
 		@end-meta-configuration
 	*/
 
 	if( falzy( array ) || !doubt( array, AS_ARRAY ) ){
-		array = [ ];
+		return [ ];
 	}
 
 	try{
-		return Array.from( array, map, entity );
+		return Array.from( array );
 
 	}catch( error ){
 		return [ ];

@@ -1,8 +1,42 @@
+<!DOCTYPE html>
 <html>
-	<head>
-		<script
-			type="application/javascript"
-			src="./raze.deploy.js">
-		</script>
-	</head>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width">
+	<title>Raze QUnit Example</title>
+	<link rel="stylesheet" href="https://code.jquery.com/qunit/qunit-2.3.2.css">
+	<script src="https://code.jquery.com/qunit/qunit-2.3.2.js"></script>
+	<script type="application/javascript" src="./raze.deploy.js"></script>
+</head>
+
+<body>
+	<div id="qunit"></div>
+	<div id="qunit-fixture"></div>
+	<script>
+		QUnit.test("ok test", function (assert) {
+			let test = {};
+			raze("hello", "world", test);
+
+			assert.ok(raze());
+
+			assert.ok(raze(null));
+
+			assert.ok(raze(undefined));
+
+			assert.ok(raze(false));
+
+			assert.ok(raze(true));
+
+			assert.ok(raze("hello world"));
+
+			assert.ok(raze([1, 2, 3]));
+
+			assert.ok(raze([]));
+
+
+		});
+	</script>
+</body>
+
 </html>

@@ -1,6 +1,6 @@
 {
   "name": "raze",
-  "version": "0.32.0",
+  "version": "0.33.0",
   "description": "Convert array-like data structures to Array instance.",
   "main": "raze.deploy.js",
   "support": "raze.support.js",
@@ -31,8 +31,5 @@
     "bower_components",
     "test",
     "tests"
-  ],
-  "dependencies": {
-    "doubt": "^0.29.0"
-  }
+  ]
 }

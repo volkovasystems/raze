@@ -50,15 +50,7 @@
 
 		This will always return a new array.
 	@end-module-documentation
-
-	@include:
-		{
-			"doubt": "doubt"
-		}
-	@end-include
 */
-
-const doubt = require( "doubt" );
 
 const raze = function raze( array ){
 	/*;
@@ -69,7 +61,7 @@ const raze = function raze( array ){
 		@end-meta-configuration
 	*/
 
-	if( !doubt( array, AS_ARRAY ) ){
+	if( typeof array != "object" ){
 		return [ ];
 	}
 

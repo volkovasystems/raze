@@ -10,6 +10,8 @@ assert.equal( raze( arguments ).length != 0, true, "should be true" );
 
 assert.deepEqual( raze( ), [ ], "should be empty array" );
 
+assert.deepEqual( raze( null ), [ ], "should be empty array" );
+
 assert.deepEqual( raze( NaN ), [ ], "should be empty array" );
 
 assert.deepEqual( raze( Infinity ), [ ], "should be empty array" );

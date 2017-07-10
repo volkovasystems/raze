@@ -50,15 +50,7 @@
               
               		This will always return a new array.
               	@end-module-documentation
-              
-              	@include:
-              		{
-              			"doubt": "doubt"
-              		}
-              	@end-include
-              */var _from = require("babel-runtime/core-js/array/from");var _from2 = _interopRequireDefault(_from);function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
-
-var doubt = require("doubt");
+              */var _from = require("babel-runtime/core-js/array/from");var _from2 = _interopRequireDefault(_from);var _typeof2 = require("babel-runtime/helpers/typeof");var _typeof3 = _interopRequireDefault(_typeof2);function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
 
 var raze = function raze(array) {
 	/*;
@@ -69,7 +61,7 @@ var raze = function raze(array) {
                                  	@end-meta-configuration
                                  */
 
-	if (!doubt(array, AS_ARRAY)) {
+	if ((typeof array === "undefined" ? "undefined" : (0, _typeof3.default)(array)) != "object") {
 		return [];
 	}
 

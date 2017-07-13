@@ -15,42 +15,32 @@
 	<div id="qunit-fixture"></div>
 	<script>
 		QUnit.test("ok test", function (assert) {
-			let test = {};
-			assert.deepEqual(raze(), [], "should have empty array");
+			
+			assert.deepEqual( raze( [ 1, 2, 3 ] ), [ 1, 2, 3 ], "should be equal" );
 
-			assert.deepEqual(raze(null), [], "should have empty array");
+			assert.deepEqual( raze( [ { "name": "simple" } ] ), [ { "name": "simple" } ], "should be equal" );
 
-			assert.deepEqual(raze(undefined), [], "should have empty array");
+			assert.equal( raze( arguments ).length != 0, true, "should be true" );
 
-			assert.deepEqual(raze(NaN), [], "should have empty array");
+			assert.deepEqual( raze( ), [ ], "should be empty array" );
 
-			assert.deepEqual(raze(Infinity), [], "should have empty array");
+			assert.deepEqual( raze( null ), [ ], "should be empty array" );
 
-			assert.deepEqual(raze(false), [], "should have empty array");
+			assert.deepEqual( raze( NaN ), [ ], "should be empty array" );
 
-			assert.deepEqual(raze(true), [], "should have empty array");
+			assert.deepEqual( raze( Infinity ), [ ], "should be empty array" );
 
-			assert.deepEqual(raze("hello world"), [], "should have empty array");
+			assert.deepEqual( raze( true ), [ ], "should be empty array" );
 
-			assert.deepEqual(raze(123), [], "should have empty array");
+			assert.deepEqual( raze( [ ] ), [ ], "should be empty array" );
 
-			assert.deepEqual(raze([]), [], "should have empty array");
+			assert.deepEqual( raze( { } ), [ ], "should be empty array" );
 
-			assert.deepEqual(raze({}), [], "should have empty array");
+			assert.deepEqual( raze( Symbol.for( "hello" ) ), [ ], "should be empty array" );
 
-			assert.deepEqual(raze({ "name": "simple" }), [], "should have empty array");
+			assert.deepEqual( raze( Object ), [ ], "should be empty array" );
 
-			assert.deepEqual(raze(Symbol.for("hello")), [], "should have empty array");
-
-			assert.deepEqual(raze(Object), [], "should have empty array");
-
-			assert.deepEqual(raze(Object.protype), [], "should have empty array");
-
-			assert.deepEqual(raze(function hello() { }), [], "should have empty array");
-
-			assert.deepEqual(raze([1, 2, 3]), [1, 2, 3], "should be equal");
-
-			assert.deepEqual(raze([{ "name": "simple" }]), [{ "name": "simple" }], "should be equal");
+			assert.deepEqual( raze( function Hello( ){ } ), [ ], "should be empty array" );
 
 		});
 	</script>

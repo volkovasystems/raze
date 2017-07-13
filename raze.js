@@ -34,10 +34,11 @@
 			"file": "raze.js",
 			"module": "raze",
 			"author": "Richeve S. Bebedor",
-			"contributors": [
-				"John Lenon Maghanoy <johnlenonmaghanoy@gmail.com>"
-			],
 			"eMail": "richeve.bebedor@gmail.com",
+			"contributors": [
+				"John Lenon Maghanoy <johnlenonmaghanoy@gmail.com>",
+				"Vinse Vinalon <vinsevinalon@gmail.com>"
+			],
 			"repository": "https://github.com/volkovasystems/raze.git",
 			"test": "raze-test.js",
 			"global": true
@@ -49,15 +50,7 @@
 
 		This will always return a new array.
 	@end-module-documentation
-
-	@include:
-		{
-			"doubt": "doubt"
-		}
-	@end-include
 */
-
-const doubt = require( "doubt" );
 
 const raze = function raze( array ){
 	/*;
@@ -68,7 +61,7 @@ const raze = function raze( array ){
 		@end-meta-configuration
 	*/
 
-	if( !doubt( array, AS_ARRAY ) ){
+	if( typeof array != "object" ){
 		return [ ];
 	}
 

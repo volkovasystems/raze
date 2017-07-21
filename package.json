@@ -1,7 +1,7 @@
 {
   "name": "raze",
   "version": "0.33.0",
-  "description": "Convert array-like data structures to Array instance.",
+  "description": "Convert entity to Array instance.",
   "main": "raze.js",
   "support": "raze.support.js",
   "deploy": "raze.deploy.js",

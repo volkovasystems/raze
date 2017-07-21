@@ -46,27 +46,43 @@
 	@end-module-configuration
 
 	@module-documentation:
-		Convert array-like data structures to Array instance.
+		Convert entity to Array instance.
 
 		This will always return a new array.
 	@end-module-documentation
 */
 
-const raze = function raze( array ){
+const ARGUMENTS_PATTERN = /^\[object Arguments\]$/;
+
+const raze = function raze( entity ){
 	/*;
 		@meta-configuration:
 			{
-				"array:required": doubt:AS_ARRAY
+				"entity:required": "*"
 			}
 		@end-meta-configuration
 	*/
 
-	if( typeof array != "object" ){
-		return [ ];
+	if( typeof entity != "object" ){
+		return [ entity ];
 	}
 
 	try{
-		return Array.from( array );
+		let array = Array.from( entity );
+
+		if( array.length === 0 ){
+			if( typeof entity == "function" ){
+				return [ entity ];
+			}
+
+			if( ARGUMENTS_PATTERN.test( `${ entity }` ) ){
+				return array;
+			}
+
+			return [ entity ];
+		}
+
+		return array;
 
 	}catch( error ){
 		return [ ];

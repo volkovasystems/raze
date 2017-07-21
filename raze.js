@@ -63,6 +63,31 @@ const raze = function raze( entity ){
 		@end-meta-configuration
 	*/
 
+	/*;
+		@note:
+			If entity is falsy, return empty array.
+		@end-note
+	*/
+	if(
+		( typeof entity == "undefined" ) ||
+		( typeof entity == "string" && entity.length == 0 ) ||
+		( typeof entity == "object" && entity == null ) ||
+		( typeof entity == "number" && isNaN( entity ) )
+	){
+		return [ ];
+	}
+
+	/*;
+		@note:
+			All arrays, array-like, iterable, are object (with rare exception*)
+
+			Non-objects take up the first position of the array.
+
+			* Functions with Symbol.iterable might be an exception but chances
+				of this being implemented is rare considering no practical use cases
+				as of the moment.
+		@end-note
+	*/
 	if( typeof entity != "object" ){
 		return [ entity ];
 	}
@@ -70,12 +95,20 @@ const raze = function raze( entity ){
 	try{
 		let array = Array.from( entity );
 
+		/*;
+			@note:
+				If the array result is empty, then check if it is an argument entity,
+					else return the entity as the first position in the object because
+					the object is not absorbed because the object is not array-like or
+					iterable.
+			@end-note
+		*/
 		if( array.length === 0 ){
-			if( typeof entity == "function" ){
-				return [ entity ];
+			if( ARGUMENTS_PATTERN.test( `${ entity }` ) ){
+				return array;
 			}
 
-			if( ARGUMENTS_PATTERN.test( `${ entity }` ) ){
+			if( Array.isArray( entity ) ){
 				return array;
 			}
 

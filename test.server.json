@@ -1,0 +1,32 @@
+{
+  "stats": {
+    "suites": 2,
+    "tests": 1,
+    "passes": 1,
+    "pending": 0,
+    "failures": 0,
+    "start": "2017-07-28T08:38:52.326Z",
+    "end": "2017-07-28T08:38:52.332Z",
+    "duration": 6
+  },
+  "tests": [
+    {
+      "title": "should be equal to [ 1, 2, 3 ]",
+      "fullTitle": "raze `raze( [ 1, 2, 3 ] )` should be equal to [ 1, 2, 3 ]",
+      "duration": 2,
+      "currentRetry": 0,
+      "err": {}
+    }
+  ],
+  "pending": [],
+  "failures": [],
+  "passes": [
+    {
+      "title": "should be equal to [ 1, 2, 3 ]",
+      "fullTitle": "raze `raze( [ 1, 2, 3 ] )` should be equal to [ 1, 2, 3 ]",
+      "duration": 2,
+      "currentRetry": 0,
+      "err": {}
+    }
+  ]
+}

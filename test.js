@@ -61,13 +61,9 @@ const assert = require( "assert" );
 const raze = require( "./raze.js" );
 //: @end-server
 
-//: @client:
-const raze = require( "./raze.support.js" );
-//: @end-client
 
-//: @bridge:
-const path = require( "path" );
-//: @end-bridge
+
+
 
 //: @server:
 describe( "raze", ( ) => {
@@ -99,27 +95,7 @@ describe( "raze", ( ) => {
 //: @end-server
 
 
-//: @bridge:
-
-describe( "raze", ( ) => {
-
-	
-	let directory = __dirname;
-	let testBridge = path.resolve( directory, "bridge.html" );
-	let bridgeURL = `file://${ testBridge }`;
-
-	
-	describe( "`raze( [ 1, 2, 3 ] )`", ( ) => {
-		it( "should be equal to [ 1, 2, 3 ]", ( ) => {
-			let result = browser.url( bridgeURL ).execute( ( ) => raze( ) );
-			assert.deepEqual( raze( [ 1, 2, 3 ] ), [ 1, 2, 3 ] );
-
-		} );
-	} );
-
-} );
-
-//: @end-bridge:
+:
 
 
 // assert.deepEqual( raze( [ 1, 2, 3 ] ), [ 1, 2, 3 ], "should be equal" );

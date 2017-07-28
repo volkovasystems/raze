@@ -80,22 +80,13 @@ describe( "raze", ( ) => {
 //: @end-server
 
 
-//: @client: 
-describe( "raze", ( ) => {
-	
-	describe( "`raze( [ 1, 2, 3 ] )`", ( ) => {
-		it( "should be equal to [ 1, 2, 3 ]", ( ) => {
-
-			assert.deepEqual( raze( [ 1, 2, 3 ] ), [ 1, 2, 3 ] );
-
-		} );
-	} );
-
-} );
-//: @end-server
 
 
-:
+
+
+
+
+
 
 
 // assert.deepEqual( raze( [ 1, 2, 3 ] ), [ 1, 2, 3 ], "should be equal" );

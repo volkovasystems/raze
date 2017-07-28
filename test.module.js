@@ -96,7 +96,7 @@ describe( "raze", ( ) => {
 	} );
 
 } );
-//: @end-server
+//: @end-client
 
 
 //: @bridge:
@@ -119,7 +119,10 @@ describe( "raze", ( ) => {
 
 } );
 
-//: @end-bridge:
+//: @end-bridge
+
+
+
 
 
 // assert.deepEqual( raze( [ 1, 2, 3 ] ), [ 1, 2, 3 ], "should be equal" );

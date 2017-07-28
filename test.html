@@ -1,8 +1,49 @@
+<!DOCTYPE html>
 <html>
-	<head>
-		<script
-			type="application/javascript"
-			src="./raze.deploy.js">
-		</script>
-	</head>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width">
+	<title>Raze QUnit Example</title>
+	<link rel="stylesheet" href="https://code.jquery.com/qunit/qunit-2.3.2.css">
+	<script src="https://code.jquery.com/qunit/qunit-2.3.2.js"></script>
+	<script type="application/javascript" src="./raze.deploy.js"></script>
+</head>
+
+<body>
+	<div id="qunit"></div>
+	<div id="qunit-fixture"></div>
+	<script>
+		QUnit.test("ok test", function (assert) {
+			
+			assert.deepEqual( raze( [ 1, 2, 3 ] ), [ 1, 2, 3 ], "should be equal" );
+
+			assert.deepEqual( raze( [ { "name": "simple" } ] ), [ { "name": "simple" } ], "should be equal" );
+
+			assert.equal( raze( arguments ).length != 0, true, "should be true" );
+
+			assert.deepEqual( raze( ), [ ], "should be empty array" );
+
+			assert.deepEqual( raze( null ), [ ], "should be empty array" );
+
+			assert.deepEqual( raze( NaN ), [ ], "should be empty array" );
+
+			assert.deepEqual( raze( Infinity ), [ ], "should be empty array" );
+
+			assert.deepEqual( raze( true ), [ ], "should be empty array" );
+
+			assert.deepEqual( raze( [ ] ), [ ], "should be empty array" );
+
+			assert.deepEqual( raze( { } ), [ ], "should be empty array" );
+
+			assert.deepEqual( raze( Symbol.for( "hello" ) ), [ ], "should be empty array" );
+
+			assert.deepEqual( raze( Object ), [ ], "should be empty array" );
+
+			assert.deepEqual( raze( function Hello( ){ } ), [ ], "should be empty array" );
+
+		});
+	</script>
+</body>
+
 </html>

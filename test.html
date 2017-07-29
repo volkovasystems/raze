@@ -1,49 +1,26 @@
 <!DOCTYPE html>
 <html>
+	<head>
+		<meta charset="utf-8">
 
-<head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width">
-	<title>Raze QUnit Example</title>
-	<link rel="stylesheet" href="https://code.jquery.com/qunit/qunit-2.3.2.css">
-	<script src="https://code.jquery.com/qunit/qunit-2.3.2.js"></script>
-	<script type="application/javascript" src="./raze.deploy.js"></script>
-</head>
+		<title>test:raze</title>
 
-<body>
-	<div id="qunit"></div>
-	<div id="qunit-fixture"></div>
-	<script>
-		QUnit.test("ok test", function (assert) {
-			
-			assert.deepEqual( raze( [ 1, 2, 3 ] ), [ 1, 2, 3 ], "should be equal" );
+		<link rel="stylesheet" href="https://unpkg.com/mocha/mocha.css"/>
+	</head>
 
-			assert.deepEqual( raze( [ { "name": "simple" } ] ), [ { "name": "simple" } ], "should be equal" );
+	<body>
+		<div id="mocha"></div>
 
-			assert.equal( raze( arguments ).length != 0, true, "should be true" );
+		<script type="application/javascript" src="https://unpkg.com/mocha/mocha.js"></script>
 
-			assert.deepEqual( raze( ), [ ], "should be empty array" );
+		<script type="application/javascript">
+			mocha.setup( "bdd" );
+		</script>
 
-			assert.deepEqual( raze( null ), [ ], "should be empty array" );
+		<script type="application/javascript" src="./test.deploy.js"></script>
 
-			assert.deepEqual( raze( NaN ), [ ], "should be empty array" );
-
-			assert.deepEqual( raze( Infinity ), [ ], "should be empty array" );
-
-			assert.deepEqual( raze( true ), [ ], "should be empty array" );
-
-			assert.deepEqual( raze( [ ] ), [ ], "should be empty array" );
-
-			assert.deepEqual( raze( { } ), [ ], "should be empty array" );
-
-			assert.deepEqual( raze( Symbol.for( "hello" ) ), [ ], "should be empty array" );
-
-			assert.deepEqual( raze( Object ), [ ], "should be empty array" );
-
-			assert.deepEqual( raze( function Hello( ){ } ), [ ], "should be empty array" );
-
-		});
-	</script>
-</body>
-
+		<script type="application/javascript">
+			mocha.run( );
+		</script>
+	</body>
 </html>

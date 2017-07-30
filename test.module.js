@@ -80,7 +80,89 @@ describe( "raze", ( ) => {
 		} );
 	} );
 
+	describe( "`raze( [ { name: simple } ] )`", ( ) => {
+	it( "should be equal to [ { name: simple } ]", ( ) => {
+
+			assert.deepEqual( raze( [ { "name": "simple" } ] ), [ { "name": "simple" } ] );
+
+		} );
+	} );
+
+	describe( "raze( )", ( ) => {
+	it( "should be empty array", ( ) => {
+
+			assert.deepEqual( raze( ), [ ] );
+
+		} );
+	} );
+
+	describe( "raze( null )", ( ) => {
+	it( "should be empty array", ( ) => {
+
+			assert.deepEqual( raze( null ), [ ] );
+
+		} );
+	} );
+
+	describe( "raze( Nan )", ( ) => {
+	it( "should be empty array", ( ) => {
+
+			assert.deepEqual( raze( NaN ), [ ] );
+
+		} );
+	} );
+
+	describe( "raze( Infinity )", ( ) => {
+	it( "should contain Infinity", ( ) => {
+
+			assert.deepEqual( raze( Infinity ), [ Infinity ] );
+
+		} );
+	} );
+
+	describe( "raze( true )", ( ) => {
+	it( "should contain true", ( ) => {
+
+			assert.deepEqual( raze( true ), [ true ] );
+
+		} );
+	} );
+
+	describe( "raze( [ ] )", ( ) => {
+	it( "should be empty array", ( ) => {
+
+			assert.deepEqual( raze( [ ] ), [ ] );
+
+		} );
+	} );
+
+	describe( "raze( { } )", ( ) => {
+	it( "should contain empty object", ( ) => {
+
+			assert.deepEqual( raze( { } ), [ { } ] );
+
+		} );
+	} );
+
+	describe( "raze( Symbol.for( hello ) )", ( ) => {
+	it( "should contain hello symbol", ( ) => {
+
+			assert.deepEqual( raze( Symbol.for( "hello" ) ), [ Symbol.for( "hello" ) ] );
+
+		} );
+	} );
+
+	describe( "raze( Object )", ( ) => {
+	it( "should contain Object function", ( ) => {
+
+			assert.deepEqual( raze ( Object ), [ Object ] );
+
+		} );
+	} );
+
 } );
+
+
 //: @end-server
 
 
@@ -95,7 +177,88 @@ describe( "raze", ( ) => {
 		} );
 	} );
 
+	describe( "`raze( [ { name: simple } ] )`", ( ) => {
+	it( "should be equal to [ { name: simple } ]", ( ) => {
+
+			assert.deepEqual( raze( [ { "name": "simple" } ] ), [ { "name": "simple" } ] );
+
+		} );
+	} );
+
+	describe( "raze( )", ( ) => {
+	it( "should be empty array", ( ) => {
+
+			assert.deepEqual( raze( ), [ ] );
+
+		} );
+	} );
+
+	describe( "raze( null )", ( ) => {
+	it( "should be empty array", ( ) => {
+
+			assert.deepEqual( raze( null ), [ ] );
+
+		} );
+	} );
+
+	describe( "raze( Nan )", ( ) => {
+	it( "should be empty array", ( ) => {
+
+			assert.deepEqual( raze( NaN ), [ ] );
+
+		} );
+	} );
+
+	describe( "raze( Infinity )", ( ) => {
+	it( "should contain Infinity", ( ) => {
+
+			assert.deepEqual( raze( Infinity ), [ Infinity ] );
+
+		} );
+	} );
+
+	describe( "raze( true )", ( ) => {
+	it( "should contain true", ( ) => {
+
+			assert.deepEqual( raze( true ), [ true ] );
+
+		} );
+	} );
+
+	describe( "raze( [ ] )", ( ) => {
+	it( "should be empty array", ( ) => {
+
+			assert.deepEqual( raze( [ ] ), [ ] );
+
+		} );
+	} );
+
+	describe( "raze( { } )", ( ) => {
+	it( "should contain empty object", ( ) => {
+
+			assert.deepEqual( raze( { } ), [ { } ] );
+
+		} );
+	} );
+
+	describe( "raze( Symbol.for( hello ) )", ( ) => {
+	it( "should contain hello symbol", ( ) => {
+
+			assert.deepEqual( raze( Symbol.for( "hello" ) ), [ Symbol.for( "hello" ) ] );
+
+		} );
+	} );
+
+	describe( "raze( Object )", ( ) => {
+	it( "should contain Object function", ( ) => {
+
+			assert.deepEqual( raze( ( Object ), [ Object ] ) );
+
+		} );
+	} );
+
 } );
+
 //: @end-client
 
 
@@ -117,7 +280,88 @@ describe( "raze", ( ) => {
 		} );
 	} );
 
+	describe( "`raze( [ { name: simple } ] )`", ( ) => {
+	it( "should be equal to [ { name: simple } ]", ( ) => {
+			let result = browser.url( bridgeURL ).execute( ( ) => raze( ) );
+			assert.deepEqual( raze( [ { "name": "simple" } ] ), [ { "name": "simple" } ] );
+
+		} );
+	} );
+
+		describe( "raze( )", ( ) => {
+	it( "should be empty array", ( ) => {
+			let result = browser.url( bridgeURL ).execute( ( ) => raze( ) );
+			assert.deepEqual( raze( ), [ ] );
+
+		} );
+	} );
+
+	describe( "raze( null )", ( ) => {
+	it( "should be empty array", ( ) => {
+			let result = browser.url( bridgeURL ).execute( ( ) => raze( ) );
+			assert.deepEqual( raze( null ), [ ] );
+
+		} );
+	} );
+
+	describe( "raze( Nan )", ( ) => {
+	it( "should be empty array", ( ) => {
+			let result = browser.url( bridgeURL ).execute( ( ) => raze( ) );
+			assert.deepEqual( raze( NaN ), [ ] );
+
+		} );
+	} );
+
+	describe( "raze( Infinity )", ( ) => {
+	it( "should contain Infinity", ( ) => {
+			let result = browser.url( bridgeURL ).execute( ( ) => raze( ) );
+			assert.deepEqual( raze( Infinity ), [ Infinity ] );
+
+		} );
+	} );
+
+	describe( "raze( true )", ( ) => {
+	it( "should contain true", ( ) => {
+			let result = browser.url( bridgeURL ).execute( ( ) => raze( ) );
+			assert.deepEqual( raze( true ), [ true ] );
+
+		} );
+	} );
+
+	describe( "raze( [ ] )", ( ) => {
+	it( "should be empty array", ( ) => {
+			let result = browser.url( bridgeURL ).execute( ( ) => raze( ) );
+			assert.deepEqual( raze( [ ] ), [ ] );
+
+		} );
+	} );
+
+	describe( "raze( { } )", ( ) => {
+	it( "should contain empty object", ( ) => {
+			let result = browser.url( bridgeURL ).execute( ( ) => raze( ) );
+			assert.deepEqual( raze( { } ), [ { } ] );
+
+		} );
+	} );
+
+	describe( "raze( Symbol.for( hello ) )", ( ) => {
+	it( "should contain hello symbol", ( ) => {
+			let result = browser.url( bridgeURL ).execute( ( ) => raze( ) );
+			assert.deepEqual( raze( Symbol.for( "hello" ) ), [ Symbol.for( "hello" ) ] );
+
+		} );
+	} );
+
+	describe( "raze( Object )", ( ) => {
+	it( "should contain Object function", ( ) => {
+			let result = browser.url( bridgeURL ).execute( ( ) => raze( ) );
+			assert.deepEqual( raze( ( Object ), [ Object ] ) );
+
+		} );
+	} );
+
 } );
+
 
 //: @end-bridge
 

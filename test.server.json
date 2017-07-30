@@ -5,9 +5,9 @@
     "passes": 11,
     "pending": 0,
     "failures": 0,
-    "start": "2017-07-30T08:18:05.852Z",
-    "end": "2017-07-30T08:18:05.860Z",
-    "duration": 8
+    "start": "2017-07-30T08:38:34.251Z",
+    "end": "2017-07-30T08:38:34.263Z",
+    "duration": 12
   },
   "tests": [
     {
@@ -20,7 +20,7 @@
     {
       "title": "should be equal to [ { name: simple } ]",
       "fullTitle": "raze `raze( [ { name: simple } ] )` should be equal to [ { name: simple } ]",
-      "duration": 0,
+      "duration": 1,
       "currentRetry": 0,
       "err": {}
     },
@@ -62,7 +62,7 @@
     {
       "title": "should be empty array",
       "fullTitle": "raze raze( [ ] ) should be empty array",
-      "duration": 0,
+      "duration": 1,
       "currentRetry": 0,
       "err": {}
     },
@@ -101,7 +101,7 @@
     {
       "title": "should be equal to [ { name: simple } ]",
       "fullTitle": "raze `raze( [ { name: simple } ] )` should be equal to [ { name: simple } ]",
-      "duration": 0,
+      "duration": 1,
       "currentRetry": 0,
       "err": {}
     },
@@ -143,7 +143,7 @@
     {
       "title": "should be empty array",
       "fullTitle": "raze raze( [ ] ) should be empty array",
-      "duration": 0,
+      "duration": 1,
       "currentRetry": 0,
       "err": {}
     },

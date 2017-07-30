@@ -252,7 +252,7 @@ describe( "raze", ( ) => {
 	describe( "raze( Object )", ( ) => {
 	it( "should contain Object function", ( ) => {
 
-			assert.deepEqual( raze( ( Object ), [ Object ] ) );
+			assert.deepEqual( raze(  Object ), [ Object ] );
 
 		} );
 	} );

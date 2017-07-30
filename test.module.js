@@ -155,7 +155,7 @@ describe( "raze", ( ) => {
 	describe( "raze( Object )", ( ) => {
 	it( "should contain Object function", ( ) => {
 
-			assert.deepEqual( raze ( Object ), [ Object ] );
+			assert.deepEqual( raze( Object ), [ Object ] );
 
 		} );
 	} );
@@ -275,7 +275,7 @@ describe( "raze", ( ) => {
 	describe( "`raze( [ 1, 2, 3 ] )`", ( ) => {
 		it( "should be equal to [ 1, 2, 3 ]", ( ) => {
 			let result = browser.url( bridgeURL ).execute( ( ) => raze( ) );
-			assert.deepEqual( raze( [ 1, 2, 3 ] ), [ 1, 2, 3 ] );
+			assert.deepEqual( result.value, [ 1, 2, 3 ] );
 
 		} );
 	} );
@@ -283,7 +283,7 @@ describe( "raze", ( ) => {
 	describe( "`raze( [ { name: simple } ] )`", ( ) => {
 	it( "should be equal to [ { name: simple } ]", ( ) => {
 			let result = browser.url( bridgeURL ).execute( ( ) => raze( ) );
-			assert.deepEqual( raze( [ { "name": "simple" } ] ), [ { "name": "simple" } ] );
+			assert.deepEqual( result.value, [ { "name": "simple" } ] );
 
 		} );
 	} );
@@ -291,7 +291,7 @@ describe( "raze", ( ) => {
 		describe( "raze( )", ( ) => {
 	it( "should be empty array", ( ) => {
 			let result = browser.url( bridgeURL ).execute( ( ) => raze( ) );
-			assert.deepEqual( raze( ), [ ] );
+			assert.deepEqual( result.value, [ ] );
 
 		} );
 	} );
@@ -299,7 +299,7 @@ describe( "raze", ( ) => {
 	describe( "raze( null )", ( ) => {
 	it( "should be empty array", ( ) => {
 			let result = browser.url( bridgeURL ).execute( ( ) => raze( ) );
-			assert.deepEqual( raze( null ), [ ] );
+			assert.deepEqual( result.value, [ ] );
 
 		} );
 	} );
@@ -307,7 +307,7 @@ describe( "raze", ( ) => {
 	describe( "raze( Nan )", ( ) => {
 	it( "should be empty array", ( ) => {
 			let result = browser.url( bridgeURL ).execute( ( ) => raze( ) );
-			assert.deepEqual( raze( NaN ), [ ] );
+			assert.deepEqual( result.value, [ ] );
 
 		} );
 	} );
@@ -315,7 +315,7 @@ describe( "raze", ( ) => {
 	describe( "raze( Infinity )", ( ) => {
 	it( "should contain Infinity", ( ) => {
 			let result = browser.url( bridgeURL ).execute( ( ) => raze( ) );
-			assert.deepEqual( raze( Infinity ), [ Infinity ] );
+			assert.deepEqual( result.value, [ Infinity ] );
 
 		} );
 	} );
@@ -323,7 +323,7 @@ describe( "raze", ( ) => {
 	describe( "raze( true )", ( ) => {
 	it( "should contain true", ( ) => {
 			let result = browser.url( bridgeURL ).execute( ( ) => raze( ) );
-			assert.deepEqual( raze( true ), [ true ] );
+			assert.deepEqual( result.value, [ true ] );
 
 		} );
 	} );
@@ -331,7 +331,7 @@ describe( "raze", ( ) => {
 	describe( "raze( [ ] )", ( ) => {
 	it( "should be empty array", ( ) => {
 			let result = browser.url( bridgeURL ).execute( ( ) => raze( ) );
-			assert.deepEqual( raze( [ ] ), [ ] );
+			assert.deepEqual( result.value, [ ] );
 
 		} );
 	} );
@@ -339,7 +339,7 @@ describe( "raze", ( ) => {
 	describe( "raze( { } )", ( ) => {
 	it( "should contain empty object", ( ) => {
 			let result = browser.url( bridgeURL ).execute( ( ) => raze( ) );
-			assert.deepEqual( raze( { } ), [ { } ] );
+			assert.deepEqual( result.value, [ { } ] );
 
 		} );
 	} );
@@ -347,7 +347,7 @@ describe( "raze", ( ) => {
 	describe( "raze( Symbol.for( hello ) )", ( ) => {
 	it( "should contain hello symbol", ( ) => {
 			let result = browser.url( bridgeURL ).execute( ( ) => raze( ) );
-			assert.deepEqual( raze( Symbol.for( "hello" ) ), [ Symbol.for( "hello" ) ] );
+			assert.deepEqual( result.value, [ Symbol.for( "hello" ) ] );
 
 		} );
 	} );
@@ -355,7 +355,7 @@ describe( "raze", ( ) => {
 	describe( "raze( Object )", ( ) => {
 	it( "should contain Object function", ( ) => {
 			let result = browser.url( bridgeURL ).execute( ( ) => raze( ) );
-			assert.deepEqual( raze( ( Object ), [ Object ] ) );
+			assert.deepEqual( result.value, [ Object ]  );
 
 		} );
 	} );

@@ -260,3 +260,192 @@ describe( "raze", ( ) => {
 } );
 
 //: @end-client
+
+//: @bridge:
+
+describe( "raze", ( ) => {
+
+	let bridgeURL = `file://${ path.resolve( __dirname, "bridge.html" ) }`;
+
+	describe( "`raze( [ 1, 2, 3 ] )`", ( ) => {
+		it( "should be equal to [ 1, 2, 3 ]", ( ) => {
+
+			let result = browser.url( bridgeURL ).execute(
+
+				function( ){
+					return raze( [ 1, 2, 3 ] );
+				}
+
+			).value;
+
+			assert.deepEqual( result, [ 1, 2, 3 ] );
+
+		} );
+	} );
+
+	describe( "`raze( [ { 'name': 'simple' } ] )`", ( ) => {
+		it( "should be equal to [ { 'name': 'simple' } ]", ( ) => {
+
+			let result = browser.url( bridgeURL ).execute(
+
+				function( ){
+					return JSON.stringify( raze( [ { "name": "simple" } ] ) );
+				}
+
+			).value;
+
+			assert.deepEqual( JSON.parse( result ), [ { "name": "simple" } ] );
+
+		} );
+	} );
+
+	describe( "`raze( )`", ( ) => {
+		it( "should be equal to empty array", ( ) => {
+
+			let result = browser.url( bridgeURL ).execute(
+
+				function( ){
+					return JSON.stringify( raze( ) );
+				}
+
+			).value;
+
+			assert.deepEqual( JSON.parse( result ), [ ] );
+
+		} );
+	} );
+
+	describe( "`raze( null )`", ( ) => {
+		it( "should be equal to empty array", ( ) => {
+
+			let result = browser.url( bridgeURL ).execute(
+
+				function( ){
+					return JSON.stringify( raze( null ) );
+				}
+
+			).value;
+
+			assert.deepEqual( JSON.parse( result ), [ ] );
+
+		} );
+	} );
+
+	describe( "`raze( NaN )`", ( ) => {
+		it( "should be equal to empty array", ( ) => {
+
+			let result = browser.url( bridgeURL ).execute(
+
+				function( ){
+					return JSON.stringify( raze( NaN ) );
+				}
+
+			).value;
+
+			assert.deepEqual( JSON.parse( result ), [ ] );
+
+		} );
+	} );
+
+	describe( "`raze( Infinity )`", ( ) => {
+		it( "should contain Infinity", ( ) => {
+
+			let result = browser.url( bridgeURL ).execute(
+
+				function( ){
+					return JSON.stringify( raze( Infinity ) );
+				}
+
+			).value;
+
+			assert.deepEqual( JSON.parse( result ), [ null ] );
+
+		} );
+	} );
+
+	describe( "`raze( true )`", ( ) => {
+		it( "should contain true", ( ) => {
+
+			let result = browser.url( bridgeURL ).execute(
+
+				function( ){
+					return JSON.stringify( raze( true ) );
+				}
+
+			).value;
+
+			assert.deepEqual( JSON.parse( result ), [ true ] );
+
+		} );
+	} );
+
+	describe( "`raze( [ ] )`", ( ) => {
+		it( "should be equal to empty array", ( ) => {
+
+			let result = browser.url( bridgeURL ).execute(
+
+				function( ){
+					return JSON.stringify( raze( [ ] ) );
+				}
+
+			).value;
+
+			assert.deepEqual( JSON.parse( result ), [ ] );
+
+		} );
+	} );
+
+	describe( "`raze( { } )`", ( ) => {
+		it( "should contain empty object", ( ) => {
+
+			let result = browser.url( bridgeURL ).execute(
+
+				function( ){
+					return JSON.stringify( raze( { } ) );
+				}
+
+			).value;
+
+			assert.deepEqual( JSON.parse( result ), [ { } ] );
+
+		} );
+	} );
+
+	describe( "`raze( Symbol.for( 'hello' ) )`", ( ) => {
+		it( "should contain hello symbol", ( ) => {
+
+			let result = browser.url( bridgeURL ).execute(
+
+				function( ){
+					//: @ignore:
+					return raze( Symbol.for( "hello" ) );
+					//: @end-ignore
+				}
+
+			).value;
+
+			assert.deepEqual( JSON.parse( result ), [ Symbol.for( "hello" ) ] );
+
+		} );
+	} );
+
+
+	describe( "`raze( Object )`", ( ) => {
+		it( "should contain Object function", ( ) => {
+
+			let result = browser.url( bridgeURL ).execute(
+
+				function( ){
+					return JSON.stringify( raze( Object ) );
+				}
+
+			).value;
+
+			assert.deepEqual( JSON.parse( result ), [ Object ] );
+
+		} );
+	} );
+
+} );
+
+//: @end-bridge

@@ -71,7 +71,7 @@ const path = require( "path" );
 
 //: @server:
 describe( "raze", ( ) => {
-	
+
 	describe( "`raze( [ 1, 2, 3 ] )`", ( ) => {
 		it( "should be equal to [ 1, 2, 3 ]", ( ) => {
 
@@ -166,9 +166,9 @@ describe( "raze", ( ) => {
 //: @end-server
 
 
-//: @client: 
+//: @client:
 describe( "raze", ( ) => {
-	
+
 	describe( "`raze( [ 1, 2, 3 ] )`", ( ) => {
 		it( "should be equal to [ 1, 2, 3 ]", ( ) => {
 
@@ -260,109 +260,3 @@ describe( "raze", ( ) => {
 } );
 
 //: @end-client
-
-
-//: @bridge:
-
-describe( "raze", ( ) => {
-
-	
-	let directory = __dirname;
-	let testBridge = path.resolve( directory, "bridge.html" );
-	let bridgeURL = `file://${ testBridge }`;
-
-	
-	describe( "`raze( [ 1, 2, 3 ] )`", ( ) => {
-		it( "should be equal to [ 1, 2, 3 ]", ( ) => {
-			let result = browser.url( bridgeURL ).execute( ( ) => raze( ) );
-			assert.deepEqual( result.value, [ 1, 2, 3 ] );
-
-		} );
-	} );
-
-	describe( "`raze( [ { name: simple } ] )`", ( ) => {
-	it( "should be equal to [ { name: simple } ]", ( ) => {
-			let result = browser.url( bridgeURL ).execute( ( ) => raze( ) );
-			assert.deepEqual( result.value, [ { "name": "simple" } ] );
-
-		} );
-	} );
-
-		describe( "raze( )", ( ) => {
-	it( "should be empty array", ( ) => {
-			let result = browser.url( bridgeURL ).execute( ( ) => raze( ) );
-			assert.deepEqual( result.value, [ ] );
-
-		} );
-	} );
-
-	describe( "raze( null )", ( ) => {
-	it( "should be empty array", ( ) => {
-			let result = browser.url( bridgeURL ).execute( ( ) => raze( ) );
-			assert.deepEqual( result.value, [ ] );
-
-		} );
-	} );
-
-	describe( "raze( Nan )", ( ) => {
-	it( "should be empty array", ( ) => {
-			let result = browser.url( bridgeURL ).execute( ( ) => raze( ) );
-			assert.deepEqual( result.value, [ ] );
-
-		} );
-	} );
-
-	describe( "raze( Infinity )", ( ) => {
-	it( "should contain Infinity", ( ) => {
-			let result = browser.url( bridgeURL ).execute( ( ) => raze( ) );
-			assert.deepEqual( result.value, [ Infinity ] );
-
-		} );
-	} );
-
-	describe( "raze( true )", ( ) => {
-	it( "should contain true", ( ) => {
-			let result = browser.url( bridgeURL ).execute( ( ) => raze( ) );
-			assert.deepEqual( result.value, [ true ] );
-
-		} );
-	} );
-
-	describe( "raze( [ ] )", ( ) => {
-	it( "should be empty array", ( ) => {
-			let result = browser.url( bridgeURL ).execute( ( ) => raze( ) );
-			assert.deepEqual( result.value, [ ] );
-
-		} );
-	} );
-
-	describe( "raze( { } )", ( ) => {
-	it( "should contain empty object", ( ) => {
-			let result = browser.url( bridgeURL ).execute( ( ) => raze( ) );
-			assert.deepEqual( result.value, [ { } ] );
-
-		} );
-	} );
-
-	describe( "raze( Symbol.for( hello ) )", ( ) => {
-	it( "should contain hello symbol", ( ) => {
-			let result = browser.url( bridgeURL ).execute( ( ) => raze( ) );
-			assert.deepEqual( result.value, [ Symbol.for( "hello" ) ] );
-
-		} );
-	} );
-
-	describe( "raze( Object )", ( ) => {
-	it( "should contain Object function", ( ) => {
-			let result = browser.url( bridgeURL ).execute( ( ) => raze( ) );
-			assert.deepEqual( result.value, [ Object ]  );
-
-		} );
-	} );
-
-} );
-
-
-//: @end-bridge
-
-

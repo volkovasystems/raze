@@ -289,10 +289,30 @@ describe( "raze", ( ) => {
 			let result = browser.url( bridgeURL ).execute(
 
 				function( ){
+					//: @ignore:
+					return JSON.stringify( raze( [ { "name": "simple" } ] ) );
+					//: @end-ignore
+				}
+
+			).value;
+
+
+			assert.deepEqual( JSON.parse( result ), [ { "name": "simple" } ] );
+
+		} );
+	} );
+
+	describe( "`raze( [ { 'name': 'simple' } ] )`", ( ) => {
+		it( "should be equal to [ { 'name': 'simple' } ]", ( ) => {
+			//: @ignore:
+			let result = browser.url( bridgeURL ).execute(
+
+				function( ){
 					return JSON.stringify( raze( [ { "name": "simple" } ] ) );
 				}
 
 			).value;
+			//: @end-ignore
 
 			assert.deepEqual( JSON.parse( result ), [ { "name": "simple" } ] );
 

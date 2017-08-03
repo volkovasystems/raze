@@ -286,17 +286,15 @@ describe( "raze", ( ) => {
 
 	describe( "`raze( [ { 'name': 'simple' } ] )`", ( ) => {
 		it( "should be equal to [ { 'name': 'simple' } ]", ( ) => {
-
+			//: @ignore:
 			let result = browser.url( bridgeURL ).execute(
 
 				function( ){
-					//: @ignore:
 					return JSON.stringify( raze( [ { "name": "simple" } ] ) );
-					//: @end-ignore
 				}
 
 			).value;
-
+			//: @end-ignore
 
 			assert.deepEqual( JSON.parse( result ), [ { "name": "simple" } ] );
 
@@ -306,7 +304,7 @@ describe( "raze", ( ) => {
 
 	describe( "`raze( )`", ( ) => {
 		it( "should be equal to empty array", ( ) => {
-
+			//: @ignore:
 			let result = browser.url( bridgeURL ).execute(
 
 				function( ){
@@ -314,7 +312,7 @@ describe( "raze", ( ) => {
 				}
 
 			).value;
-
+			//: @end-ignore
 			assert.deepEqual( JSON.parse( result ), [ ] );
 
 		} );
@@ -323,7 +321,7 @@ describe( "raze", ( ) => {
 
 	describe( "`raze( null )`", ( ) => {
 		it( "should be equal to empty array", ( ) => {
-
+			//: @ignore:
 			let result = browser.url( bridgeURL ).execute(
 
 				function( ){
@@ -331,7 +329,7 @@ describe( "raze", ( ) => {
 				}
 
 			).value;
-
+			//: @end-ignore
 			assert.deepEqual( JSON.parse( result ), [ ] );
 
 		} );
@@ -340,7 +338,7 @@ describe( "raze", ( ) => {
 
 	describe( "`raze( NaN )`", ( ) => {
 		it( "should be equal to empty array", ( ) => {
-
+			//: @ignore:
 			let result = browser.url( bridgeURL ).execute(
 
 				function( ){
@@ -348,7 +346,7 @@ describe( "raze", ( ) => {
 				}
 
 			).value;
-
+			//: @end-ignore
 			assert.deepEqual( JSON.parse( result ), [ ] );
 
 		} );
@@ -357,7 +355,7 @@ describe( "raze", ( ) => {
 
 	describe( "`raze( Infinity )`", ( ) => {
 		it( "should contain Infinity", ( ) => {
-
+			//: @ignore:
 			let result = browser.url( bridgeURL ).execute(
 
 				function( ){
@@ -365,7 +363,7 @@ describe( "raze", ( ) => {
 				}
 
 			).value;
-
+			//: @end-ignore
 			assert.equal( result, true );
 
 		} );
@@ -374,7 +372,7 @@ describe( "raze", ( ) => {
 
 	describe( "`raze( true )`", ( ) => {
 		it( "should contain true", ( ) => {
-
+			//: @ignore:
 			let result = browser.url( bridgeURL ).execute(
 
 				function( ){
@@ -382,7 +380,7 @@ describe( "raze", ( ) => {
 				}
 
 			).value;
-
+			//: @end-ignore
 			assert.deepEqual( JSON.parse( result ), [ true ] );
 
 		} );
@@ -391,7 +389,7 @@ describe( "raze", ( ) => {
 
 	describe( "`raze( [ ] )`", ( ) => {
 		it( "should be equal to empty array", ( ) => {
-
+			//: @ignore:
 			let result = browser.url( bridgeURL ).execute(
 
 				function( ){
@@ -399,7 +397,7 @@ describe( "raze", ( ) => {
 				}
 
 			).value;
-
+			//: @end-ignore
 			assert.deepEqual( JSON.parse( result ), [ ] );
 
 		} );
@@ -408,7 +406,7 @@ describe( "raze", ( ) => {
 
 	describe( "`raze( { } )`", ( ) => {
 		it( "should contain empty object", ( ) => {
-
+			//: @ignore:
 			let result = browser.url( bridgeURL ).execute(
 
 				function( ){
@@ -416,7 +414,7 @@ describe( "raze", ( ) => {
 				}
 
 			).value;
-
+			//: @end-ignore
 			assert.deepEqual( JSON.parse( result ), [ { } ] );
 
 		} );
@@ -425,18 +423,19 @@ describe( "raze", ( ) => {
 
 	describe( "`raze( Symbol.for( 'hello' ) )`", ( ) => {
 		it( "should contain hello symbol", ( ) => {
-
+			//: @ignore:
 			let result = browser.url( bridgeURL ).execute(
 
 				function( ){
-					//: @ignore:
-					return raze( Symbol.for( "hello" ) );
-					//: @end-ignore
+					let test = raze( Symbol.for( "hello" ) )[ 0 ];
+					return test == Symbol.for( "hello" );
+
 				}
 
 			).value;
+			//: @end-ignore
 
-			assert.deepEqual( JSON.parse( result ), [ Symbol.for( "hello" ) ] );
+			assert.equal( result, true );
 
 		} );
 	} );
@@ -444,16 +443,17 @@ describe( "raze", ( ) => {
 
 	describe( "`raze( Object )`", ( ) => {
 		it( "should contain Object function", ( ) => {
-
+			//: @ignore:
 			let result = browser.url( bridgeURL ).execute(
 
 				function( ){
-					return JSON.stringify( raze( Object ) );
+					let test = raze( Object )[ 0 ];
+					return test == Object;
 				}
 
 			).value;
-
-			assert.deepEqual( JSON.parse( result ), [ Object ] );
+			//: @end-ignore
+			assert.equal( result, true );
 
 		} );
 	} );

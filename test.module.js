@@ -80,86 +80,95 @@ describe( "raze", ( ) => {
 		} );
 	} );
 
-	describe( "`raze( [ { name: simple } ] )`", ( ) => {
-	it( "should be equal to [ { name: simple } ]", ( ) => {
+
+	describe( "`raze( [ { 'name': 'simple' } ] )`", ( ) => {
+		it( "should be equal to [ { 'name': 'simple' } ]", ( ) => {
 
 			assert.deepEqual( raze( [ { "name": "simple" } ] ), [ { "name": "simple" } ] );
 
 		} );
 	} );
 
-	describe( "raze( )", ( ) => {
-	it( "should be equal to empty array", ( ) => {
+
+	describe( "`raze( )`", ( ) => {
+		it( "should be equal to empty array", ( ) => {
 
 			assert.deepEqual( raze( ), [ ] );
 
 		} );
 	} );
 
-	describe( "raze( null )", ( ) => {
-	it( "should be equal to empty array", ( ) => {
+
+	describe( "`raze( null )`", ( ) => {
+		it( "should be equal to empty array", ( ) => {
 
 			assert.deepEqual( raze( null ), [ ] );
 
 		} );
 	} );
 
-	describe( "raze( Nan )", ( ) => {
-	it( "should be equal to empty array", ( ) => {
+
+	describe( "`raze( NaN )`", ( ) => {
+		it( "should be equal to empty array", ( ) => {
 
 			assert.deepEqual( raze( NaN ), [ ] );
 
 		} );
 	} );
 
-	describe( "raze( Infinity )", ( ) => {
-	it( "should contain Infinity", ( ) => {
+
+	describe( "`raze( Infinity )`", ( ) => {
+		it( "should contain Infinity", ( ) => {
 
 			assert.deepEqual( raze( Infinity ), [ Infinity ] );
 
 		} );
 	} );
 
-	describe( "raze( true )", ( ) => {
-	it( "should contain true", ( ) => {
+
+	describe( "`raze( true )`", ( ) => {
+		it( "should contain true", ( ) => {
 
 			assert.deepEqual( raze( true ), [ true ] );
 
 		} );
 	} );
 
-	describe( "raze( [ ] )", ( ) => {
-	it( "should be equal to empty array", ( ) => {
+
+	describe( "`raze( [ ] )`", ( ) => {
+		it( "should be equal to empty array", ( ) => {
 
 			assert.deepEqual( raze( [ ] ), [ ] );
 
 		} );
 	} );
 
-	describe( "raze( { } )", ( ) => {
-	it( "should contain empty object", ( ) => {
+
+	describe( "`raze( { } )`", ( ) => {
+		it( "should contain empty object", ( ) => {
 
 			assert.deepEqual( raze( { } ), [ { } ] );
 
 		} );
 	} );
 
-	describe( "raze( Symbol.for( hello ) )", ( ) => {
-	it( "should contain hello symbol", ( ) => {
+
+	describe( "`raze( Symbol.for( 'hello' ) )`", ( ) => {
+		it( "should contain hello symbol", ( ) => {
 
 			assert.deepEqual( raze( Symbol.for( "hello" ) ), [ Symbol.for( "hello" ) ] );
 
 		} );
 	} );
 
-	describe( "raze( Object )", ( ) => {
-	it( "should contain Object function", ( ) => {
+
+	describe( "`raze( Object )`", ( ) => {
+		it( "should contain Object function", ( ) => {
 
 			assert.deepEqual( raze( Object ), [ Object ] );
 
 		} );
 	} );
-
 } );
 
 
@@ -177,88 +186,96 @@ describe( "raze", ( ) => {
 		} );
 	} );
 
-	describe( "`raze( [ { name: simple } ] )`", ( ) => {
-	it( "should be equal to [ { name: simple } ]", ( ) => {
+
+	describe( "`raze( [ { 'name': 'simple' } ] )`", ( ) => {
+		it( "should be equal to [ { 'name': 'simple' } ]", ( ) => {
 
 			assert.deepEqual( raze( [ { "name": "simple" } ] ), [ { "name": "simple" } ] );
 
 		} );
 	} );
 
-	describe( "raze( )", ( ) => {
-	it( "should be equal to empty array", ( ) => {
+
+	describe( "`raze( )`", ( ) => {
+		it( "should be equal to empty array", ( ) => {
 
 			assert.deepEqual( raze( ), [ ] );
 
 		} );
 	} );
 
-	describe( "raze( null )", ( ) => {
-	it( "should be equal to empty array", ( ) => {
+
+	describe( "`raze( null )`", ( ) => {
+		it( "should be equal to empty array", ( ) => {
 
 			assert.deepEqual( raze( null ), [ ] );
 
 		} );
 	} );
 
-	describe( "raze( Nan )", ( ) => {
-	it( "should be equal to empty array", ( ) => {
+
+	describe( "`raze( NaN )`", ( ) => {
+		it( "should be equal to empty array", ( ) => {
 
 			assert.deepEqual( raze( NaN ), [ ] );
 
 		} );
 	} );
 
-	describe( "raze( Infinity )", ( ) => {
-	it( "should contain Infinity", ( ) => {
+
+	describe( "`raze( Infinity )`", ( ) => {
+		it( "should contain Infinity", ( ) => {
 
 			assert.deepEqual( raze( Infinity ), [ Infinity ] );
 
 		} );
 	} );
 
-	describe( "raze( true )", ( ) => {
-	it( "should contain true", ( ) => {
+
+	describe( "`raze( true )`", ( ) => {
+		it( "should contain true", ( ) => {
 
 			assert.deepEqual( raze( true ), [ true ] );
 
 		} );
 	} );
 
-	describe( "raze( [ ] )", ( ) => {
-	it( "should be equal to empty array", ( ) => {
+
+	describe( "`raze( [ ] )`", ( ) => {
+		it( "should be equal to empty array", ( ) => {
 
 			assert.deepEqual( raze( [ ] ), [ ] );
 
 		} );
 	} );
 
-	describe( "raze( { } )", ( ) => {
-	it( "should contain empty object", ( ) => {
+
+	describe( "`raze( { } )`", ( ) => {
+		it( "should contain empty object", ( ) => {
 
 			assert.deepEqual( raze( { } ), [ { } ] );
 
 		} );
 	} );
 
-	describe( "raze( Symbol.for( hello ) )", ( ) => {
-	it( "should contain hello symbol", ( ) => {
+
+	describe( "`raze( Symbol.for( 'hello' ) )`", ( ) => {
+		it( "should contain hello symbol", ( ) => {
 
 			assert.deepEqual( raze( Symbol.for( "hello" ) ), [ Symbol.for( "hello" ) ] );
 
 		} );
 	} );
+	
 
-	describe( "raze( Object )", ( ) => {
-	it( "should contain Object function", ( ) => {
+	describe( "`raze( Object )`", ( ) => {
+		it( "should contain Object function", ( ) => {
 
-			assert.deepEqual( raze(  Object ), [ Object ] );
+			assert.deepEqual( raze( Object ), [ Object ] );
 
 		} );
 	} );
-
 } );
-
 //: @end-client
 
 //: @bridge:

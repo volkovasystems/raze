@@ -5,9 +5,9 @@
     "passes": 11,
     "pending": 0,
     "failures": 0,
-    "start": "2017-07-30T08:38:34.251Z",
-    "end": "2017-07-30T08:38:34.263Z",
-    "duration": 12
+    "start": "2017-08-05T10:16:13.453Z",
+    "end": "2017-08-05T10:16:13.462Z",
+    "duration": 9
   },
   "tests": [
     {
@@ -18,71 +18,71 @@
       "err": {}
     },
     {
-      "title": "should be equal to [ { name: simple } ]",
-      "fullTitle": "raze `raze( [ { name: simple } ] )` should be equal to [ { name: simple } ]",
-      "duration": 1,
-      "currentRetry": 0,
-      "err": {}
-    },
-    {
-      "title": "should be empty array",
-      "fullTitle": "raze raze( ) should be empty array",
+      "title": "should be equal to [ { 'name': 'simple' } ]",
+      "fullTitle": "raze `raze( [ { 'name': 'simple' } ] )` should be equal to [ { 'name': 'simple' } ]",
       "duration": 0,
       "currentRetry": 0,
       "err": {}
     },
     {
-      "title": "should be empty array",
-      "fullTitle": "raze raze( null ) should be empty array",
+      "title": "should be equal to empty array",
+      "fullTitle": "raze `raze( )` should be equal to empty array",
       "duration": 0,
       "currentRetry": 0,
       "err": {}
     },
     {
-      "title": "should be empty array",
-      "fullTitle": "raze raze( Nan ) should be empty array",
+      "title": "should be equal to empty array",
+      "fullTitle": "raze `raze( null )` should be equal to empty array",
+      "duration": 0,
+      "currentRetry": 0,
+      "err": {}
+    },
+    {
+      "title": "should be equal to empty array",
+      "fullTitle": "raze `raze( NaN )` should be equal to empty array",
       "duration": 0,
       "currentRetry": 0,
       "err": {}
     },
     {
       "title": "should contain Infinity",
-      "fullTitle": "raze raze( Infinity ) should contain Infinity",
+      "fullTitle": "raze `raze( Infinity )` should contain Infinity",
       "duration": 0,
       "currentRetry": 0,
       "err": {}
     },
     {
       "title": "should contain true",
-      "fullTitle": "raze raze( true ) should contain true",
+      "fullTitle": "raze `raze( true )` should contain true",
       "duration": 0,
       "currentRetry": 0,
       "err": {}
     },
     {
-      "title": "should be empty array",
-      "fullTitle": "raze raze( [ ] ) should be empty array",
+      "title": "should be equal to empty array",
+      "fullTitle": "raze `raze( [ ] )` should be equal to empty array",
       "duration": 1,
       "currentRetry": 0,
       "err": {}
     },
     {
       "title": "should contain empty object",
-      "fullTitle": "raze raze( { } ) should contain empty object",
+      "fullTitle": "raze `raze( { } )` should contain empty object",
       "duration": 0,
       "currentRetry": 0,
       "err": {}
     },
     {
       "title": "should contain hello symbol",
-      "fullTitle": "raze raze( Symbol.for( hello ) ) should contain hello symbol",
+      "fullTitle": "raze `raze( Symbol.for( 'hello' ) )` should contain hello symbol",
       "duration": 0,
       "currentRetry": 0,
       "err": {}
     },
     {
       "title": "should contain Object function",
-      "fullTitle": "raze raze( Object ) should contain Object function",
+      "fullTitle": "raze `raze( Object )` should contain Object function",
       "duration": 0,
       "currentRetry": 0,
       "err": {}
@@ -99,71 +99,71 @@
       "err": {}
     },
     {
-      "title": "should be equal to [ { name: simple } ]",
-      "fullTitle": "raze `raze( [ { name: simple } ] )` should be equal to [ { name: simple } ]",
-      "duration": 1,
-      "currentRetry": 0,
-      "err": {}
-    },
-    {
-      "title": "should be empty array",
-      "fullTitle": "raze raze( ) should be empty array",
+      "title": "should be equal to [ { 'name': 'simple' } ]",
+      "fullTitle": "raze `raze( [ { 'name': 'simple' } ] )` should be equal to [ { 'name': 'simple' } ]",
       "duration": 0,
       "currentRetry": 0,
       "err": {}
     },
     {
-      "title": "should be empty array",
-      "fullTitle": "raze raze( null ) should be empty array",
+      "title": "should be equal to empty array",
+      "fullTitle": "raze `raze( )` should be equal to empty array",
       "duration": 0,
       "currentRetry": 0,
       "err": {}
     },
     {
-      "title": "should be empty array",
-      "fullTitle": "raze raze( Nan ) should be empty array",
+      "title": "should be equal to empty array",
+      "fullTitle": "raze `raze( null )` should be equal to empty array",
+      "duration": 0,
+      "currentRetry": 0,
+      "err": {}
+    },
+    {
+      "title": "should be equal to empty array",
+      "fullTitle": "raze `raze( NaN )` should be equal to empty array",
       "duration": 0,
       "currentRetry": 0,
       "err": {}
     },
     {
       "title": "should contain Infinity",
-      "fullTitle": "raze raze( Infinity ) should contain Infinity",
+      "fullTitle": "raze `raze( Infinity )` should contain Infinity",
       "duration": 0,
       "currentRetry": 0,
       "err": {}
     },
     {
       "title": "should contain true",
-      "fullTitle": "raze raze( true ) should contain true",
+      "fullTitle": "raze `raze( true )` should contain true",
       "duration": 0,
       "currentRetry": 0,
       "err": {}
     },
     {
-      "title": "should be empty array",
-      "fullTitle": "raze raze( [ ] ) should be empty array",
+      "title": "should be equal to empty array",
+      "fullTitle": "raze `raze( [ ] )` should be equal to empty array",
       "duration": 1,
       "currentRetry": 0,
       "err": {}
     },
     {
       "title": "should contain empty object",
-      "fullTitle": "raze raze( { } ) should contain empty object",
+      "fullTitle": "raze `raze( { } )` should contain empty object",
       "duration": 0,
       "currentRetry": 0,
       "err": {}
     },
     {
       "title": "should contain hello symbol",
-      "fullTitle": "raze raze( Symbol.for( hello ) ) should contain hello symbol",
+      "fullTitle": "raze `raze( Symbol.for( 'hello' ) )` should contain hello symbol",
       "duration": 0,
       "currentRetry": 0,
       "err": {}
     },
     {
       "title": "should contain Object function",
-      "fullTitle": "raze raze( Object ) should contain Object function",
+      "fullTitle": "raze `raze( Object )` should contain Object function",
       "duration": 0,
       "currentRetry": 0,
       "err": {}

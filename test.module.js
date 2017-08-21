@@ -266,7 +266,7 @@ describe( "raze", ( ) => {
 
 		} );
 	} );
-	
+
 
 	describe( "`raze( Object )`", ( ) => {
 		it( "should contain Object function", ( ) => {
@@ -286,16 +286,16 @@ describe( "raze", ( ) => {
 
 	describe( "`raze( [ 1, 2, 3 ] )`", ( ) => {
 		it( "should be equal to [ 1, 2, 3 ]", ( ) => {
-
+			//: @ignore:
 			let result = browser.url( bridgeURL ).execute(
 
 				function( ){
-					return raze( [ 1, 2, 3 ] );
+					return JSON.stringify( raze( [ 1, 2, 3 ] ) );
 				}
 
 			).value;
-
-			assert.deepEqual( result, [ 1, 2, 3 ] );
+			//: @end-ignore
+			assert.deepEqual( JSON.parse( result ), [ 1, 2, 3 ] );
 
 		} );
 	} );

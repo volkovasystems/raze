@@ -30,6 +30,17 @@
 		"node_modules",
 		"bower_components",
 		"test",
-		"tests"
+		"tests",
+		".babelrc",
+		"gulpfile.js",
+		"*.cmd",
+		"*.sh",
+		"*.html",
+		"test.*",
+		"wdio.*",
+		"webpack.*",
+		"*.module.*",
+		"*.pack.*",
+		"minify.json"
 	]
 }

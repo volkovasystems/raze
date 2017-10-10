@@ -1,13 +1,13 @@
 {
 	"stats": {
-		"suites": 12,
-		"tests": 11,
-		"passes": 11,
+		"suites": 13,
+		"tests": 12,
+		"passes": 12,
 		"pending": 0,
 		"failures": 0,
-		"start": "2017-08-21T08:23:12.295Z",
-		"end": "2017-08-21T08:23:12.307Z",
-		"duration": 12
+		"start": "2017-10-08T10:27:21.151Z",
+		"end": "2017-10-08T10:27:21.161Z",
+		"duration": 11
 	},
 	"tests": [
 		{
@@ -60,6 +60,13 @@
 			"err": {}
 		},
 		{
+			"title": "should contain false",
+			"fullTitle": "raze `raze( false )` should contain false",
+			"duration": 0,
+			"currentRetry": 0,
+			"err": {}
+		},
+		{
 			"title": "should be equal to empty array",
 			"fullTitle": "raze `raze( [ ] )` should be equal to empty array",
 			"duration": 0,
@@ -76,7 +83,7 @@
 		{
 			"title": "should contain hello symbol",
 			"fullTitle": "raze `raze( Symbol.for( 'hello' ) )` should contain hello symbol",
-			"duration": 1,
+			"duration": 0,
 			"currentRetry": 0,
 			"err": {}
 		},
@@ -141,6 +148,13 @@
 			"err": {}
 		},
 		{
+			"title": "should contain false",
+			"fullTitle": "raze `raze( false )` should contain false",
+			"duration": 0,
+			"currentRetry": 0,
+			"err": {}
+		},
+		{
 			"title": "should be equal to empty array",
 			"fullTitle": "raze `raze( [ ] )` should be equal to empty array",
 			"duration": 0,
@@ -157,7 +171,7 @@
 		{
 			"title": "should contain hello symbol",
 			"fullTitle": "raze `raze( Symbol.for( 'hello' ) )` should contain hello symbol",
-			"duration": 1,
+			"duration": 0,
 			"currentRetry": 0,
 			"err": {}
 		},

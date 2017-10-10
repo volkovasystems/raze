@@ -7,36 +7,23 @@ const DefinePlugin = webpack.DefinePlugin;
 const ModuleConcatenationPlugin = webpack.optimize.ModuleConcatenationPlugin;
 
 module.exports = {
-	"entry": "./test.support.js",
+	"entry": "./raze.js",
 	"resolve": {
 		"descriptionFiles": [
-			"bower.json",
 			"package.json"
 		],
 		"modules": [
-			"bower_components",
 			"node_modules"
 		],
 		"mainFields": [
-			"support",
-			"browser",
-			"module",
 			"main"
 		]
 	},
-	"module": {
-		"rules": [
-			{
-				"test": /\.support\.js$/,
-				"loader": "source-map-loader",
-				"enforce": "pre"
-			}
-		]
-	},
+	"target": "node",
 	"output": {
-		"library": "test",
+		"library": "raze",
 		"libraryTarget": "umd",
-		"filename": "test.deploy.js"
+		"filename": "raze.pack.js"
 	},
 	"plugins": [
 		new DefinePlugin( {
@@ -45,6 +32,13 @@ module.exports = {
 
 		new ModuleConcatenationPlugin( ),
 
+		/*;
+			@note:
+				The plugin for uglifyjs-es on webpack is currently buggy.
+				We will use external command for this in the mean time.
+			@end-note
+		*/
+		/*;
 		new UglifyJSPlugin( {
 			"uglifyOptions": {
 				"compress": {
@@ -66,5 +60,6 @@ module.exports = {
 			},
 			"sourceMap": false
 		} )
+		*/
 	]
 };

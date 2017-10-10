@@ -30,8 +30,8 @@
 	@module-configuration:
 		{
 			"package": "raze",
-			"path": "raze/raze.js",
-			"file": "raze.js",
+			"path": "raze/raze.module.js",
+			"file": "raze.module.js",
 			"module": "raze",
 			"author": "Richeve S. Bebedor",
 			"eMail": "richeve.bebedor@gmail.com",
@@ -40,7 +40,7 @@
 				"Vinse Vinalon <vinsevinalon@gmail.com>"
 			],
 			"repository": "https://github.com/volkovasystems/raze.git",
-			"test": "raze-test.js",
+			"test": "test.module.js",
 			"global": true
 		}
 	@end-module-configuration

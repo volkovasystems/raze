@@ -58,7 +58,7 @@
 const assert = require( "should" );
 
 //: @server:
-const raze = require( "./raze.js" );
+const raze = require( "./raze.pack.js" );
 //: @end-server
 
 
@@ -76,7 +76,6 @@ describe( "raze", ( ) => {
 		} );
 	} );
 
-
 	describe( "`raze( [ { 'name': 'simple' } ] )`", ( ) => {
 		it( "should be equal to [ { 'name': 'simple' } ]", ( ) => {
 
@@ -84,7 +83,6 @@ describe( "raze", ( ) => {
 
 		} );
 	} );
-
 
 	describe( "`raze( )`", ( ) => {
 		it( "should be equal to empty array", ( ) => {
@@ -94,7 +92,6 @@ describe( "raze", ( ) => {
 		} );
 	} );
 
-
 	describe( "`raze( null )`", ( ) => {
 		it( "should be equal to empty array", ( ) => {
 
@@ -102,7 +99,6 @@ describe( "raze", ( ) => {
 
 		} );
 	} );
-
 
 	describe( "`raze( NaN )`", ( ) => {
 		it( "should be equal to empty array", ( ) => {
@@ -112,7 +108,6 @@ describe( "raze", ( ) => {
 		} );
 	} );
 
-
 	describe( "`raze( Infinity )`", ( ) => {
 		it( "should contain Infinity", ( ) => {
 
@@ -120,7 +115,6 @@ describe( "raze", ( ) => {
 
 		} );
 	} );
-
 
 	describe( "`raze( true )`", ( ) => {
 		it( "should contain true", ( ) => {
@@ -130,6 +124,13 @@ describe( "raze", ( ) => {
 		} );
 	} );
 
+	describe( "`raze( false )`", ( ) => {
+		it( "should contain false", ( ) => {
+
+			assert.deepEqual( raze( false ), [ false ] );
+
+		} );
+	} );
 
 	describe( "`raze( [ ] )`", ( ) => {
 		it( "should be equal to empty array", ( ) => {
@@ -139,7 +140,6 @@ describe( "raze", ( ) => {
 		} );
 	} );
 
-
 	describe( "`raze( { } )`", ( ) => {
 		it( "should contain empty object", ( ) => {
 
@@ -147,7 +147,6 @@ describe( "raze", ( ) => {
 
 		} );
 	} );
-
 
 	describe( "`raze( Symbol.for( 'hello' ) )`", ( ) => {
 		it( "should contain hello symbol", ( ) => {
@@ -157,7 +156,6 @@ describe( "raze", ( ) => {
 		} );
 	} );
 
-
 	describe( "`raze( Object )`", ( ) => {
 		it( "should contain Object function", ( ) => {
 
@@ -166,8 +164,6 @@ describe( "raze", ( ) => {
 		} );
 	} );
 } );
-
-
 //: @end-server
 
 

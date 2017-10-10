@@ -1,9 +1,9 @@
 "use strict";
 
 const webpack = require( "webpack" );
+const UglifyJSPlugin = require( "uglifyjs-webpack-plugin" );
 
 const DefinePlugin = webpack.DefinePlugin;
-const UglifyJsPlugin = webpack.optimize.UglifyJsPlugin;
 const ModuleConcatenationPlugin = webpack.optimize.ModuleConcatenationPlugin;
 
 module.exports = {
@@ -45,20 +45,26 @@ module.exports = {
 
 		new ModuleConcatenationPlugin( ),
 
-		new UglifyJsPlugin( {
-			"compress": {
-				"keep_fargs": true,
-				"keep_fnames": true,
-				"keep_infinity": true,
-				"warnings": false,
-				"passes": 3
+		new UglifyJSPlugin( {
+			"uglifyOptions": {
+				"compress": {
+					"keep_fargs": true,
+					"keep_fnames": true,
+					"keep_infinity": true,
+					"warnings": false
+				},
+				"mangle": {
+					"keep_fnames": true,
+					"keep_classnames": true
+				},
+				"output": {
+					"comments": /^;/
+				}
 			},
-			"mangle": {
-				"keep_fnames": true
+			"parallel": {
+				"cache": true
 			},
-			"comments": false,
-			"sourceMap": true
+			"sourceMap": false
 		} )
-	],
-	"devtool": "#source-map"
+	]
 };
